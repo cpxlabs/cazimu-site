@@ -1,31 +1,42 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Portfolio() {
   const [obras] = useState(() => JSON.parse(localStorage.getItem('obras')) || [])
 
   return (
     <div className="section">
-      <h2>Portfólio</h2>
+      <div className="section-header">
+        <h2><span className="accent">Portfólio</span></h2>
+        <p>Conheça os trabalhos produzidos e distribuídos pela Cazimu.</p>
+      </div>
 
       {obras.length === 0 && (
-        <p style={{ color: '#888' }}>
-          Nenhuma obra cadastrada. Acesse o painel Admin para adicionar.
-        </p>
+        <div className="portfolio-empty">
+          <div className="empty-icon">🎶</div>
+          <p>
+            Nenhuma obra cadastrada ainda.{' '}
+            <Link to="/admin">Adicione pelo painel Admin</Link>.
+          </p>
+        </div>
       )}
 
-      {obras.map((obra) => (
-        <div key={obra.id ?? obra.titulo} className="card">
-          <h3>{obra.titulo}</h3>
-          <iframe
-            width="100%"
-            height="200"
-            src={obra.link}
-            title={`${obra.titulo} - YouTube player`}
-            frameBorder="0"
-            allowFullScreen
-          />
+      {obras.length > 0 && (
+        <div className="card-grid cols-2">
+          {obras.map((obra) => (
+            <div key={obra.id ?? obra.titulo} className="card">
+              <h3>{obra.titulo}</h3>
+              <iframe
+                width="100%"
+                height="220"
+                src={obra.link}
+                title={`${obra.titulo} - YouTube player`}
+                allowFullScreen
+              />
+            </div>
+          ))}
         </div>
-      ))}
+      )}
     </div>
   )
 }
