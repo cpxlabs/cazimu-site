@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  background: black;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+}
+
+.nav .logo {
+  height: 40px;
+}
+
+.nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: orange;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  letter-spacing: 0.2em;
+  color: orange;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.section {
+  padding: 120px 40px 60px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 2rem;
+  color: orange;
+  margin-bottom: 24px;
+}
+
+.card {
+  background: #111;
+  padding: 20px;
+  margin: 20px 0;
+  border-left: 4px solid orange;
+  border-radius: 4px;
+}
+
+.card h3 {
+  margin: 0 0 12px;
+  color: white;
+}
+
+input {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 10px 0;
+  background: #111;
+  border: 1px solid #333;
+  color: white;
+  font-size: 1rem;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background: orange;
+  border: none;
+  padding: 10px 24px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #e69500;
+}
