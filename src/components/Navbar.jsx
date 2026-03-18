@@ -1,6 +1,7 @@
 import { Link, NavLink } from 'react-router-dom'
 import { useState } from 'react'
 import logo from '../assets/logo.png'
+import ThemeToggle from './ThemeToggle'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -21,17 +22,6 @@ export default function Navbar() {
         <span className="brand-wordmark">Cazimu</span>
       </Link>
 
-      <button
-        className={`hamburger${open ? ' open' : ''}`}
-        onClick={() => setOpen((v) => !v)}
-        aria-label="Menu"
-        aria-expanded={open}
-      >
-        <span />
-        <span />
-        <span />
-      </button>
-
       <nav className={`nav-links${open ? ' open' : ''}`}>
         {links.map(({ to, label }) => (
           <NavLink
@@ -48,6 +38,19 @@ export default function Navbar() {
           Vamos conversar
         </Link>
       </nav>
+
+      <ThemeToggle />
+
+      <button
+        className={`hamburger${open ? ' open' : ''}`}
+        onClick={() => setOpen((v) => !v)}
+        aria-label="Menu"
+        aria-expanded={open}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
     </header>
   )
 }
