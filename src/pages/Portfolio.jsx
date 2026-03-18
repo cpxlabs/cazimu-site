@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom'
 
 export default function Portfolio() {
   const [obras] = useState(() => JSON.parse(localStorage.getItem('obras')) || [])
+  const toEmbed = (url) => {
+    const value = String(url || '').trim()
+    if (!value) return ''
+    if (value.includes('youtube.com/embed/')) return value
+    if (value.includes('watch?v=')) return value.replace('watch?v=', 'embed/')
+    return value
+  }
 
   return (
     <div className="section">
@@ -13,7 +20,7 @@ export default function Portfolio() {
 
       {obras.length === 0 && (
         <div className="portfolio-empty">
-          <div className="empty-icon">🎶</div>
+          <div className="empty-icon">Em breve</div>
           <p>
             Nenhuma obra cadastrada ainda.{' '}
             <Link to="/admin">Adicione pelo painel Admin</Link>.
@@ -25,11 +32,12 @@ export default function Portfolio() {
         <div className="card-grid cols-2">
           {obras.map((obra) => (
             <div key={obra.id ?? obra.titulo} className="card">
+              <span className="project-badge">Projeto</span>
               <h3>{obra.titulo}</h3>
               <iframe
                 width="100%"
                 height="220"
-                src={obra.link}
+                src={toEmbed(obra.link)}
                 title={`${obra.titulo} - YouTube player`}
                 allowFullScreen
               />

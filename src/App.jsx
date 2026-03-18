@@ -11,16 +11,20 @@ import Admin from './pages/Admin'
 export default function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/bio" element={<Bio />} />
-        <Route path="/servicos" element={<Servicos />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/contato" element={<Contato />} />
-        <Route path="/admin" element={<Admin />} />
-      </Routes>
-      <Footer />
+      <div className="app-shell">
+        <Navbar />
+        <main className="page-wrap">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/bio" element={<Bio />} />
+            <Route path="/servicos" element={<Servicos />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/contato" element={<Contato />} />
+            <Route path="/admin" element={<Admin />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </BrowserRouter>
   )
 }

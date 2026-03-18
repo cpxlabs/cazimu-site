@@ -1,9 +1,8 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { useState } from 'react'
 import logo from '../assets/logo.png'
 
 export default function Navbar() {
-  const { pathname } = useLocation()
   const [open, setOpen] = useState(false)
 
   const links = [
@@ -17,14 +16,16 @@ export default function Navbar() {
 
   return (
     <header className="nav">
-      <Link to="/">
+      <Link to="/" className="brand" onClick={() => setOpen(false)}>
         <img src={logo} className="logo" alt="Cazimu" />
+        <span className="brand-wordmark">Cazimu</span>
       </Link>
 
       <button
         className={`hamburger${open ? ' open' : ''}`}
         onClick={() => setOpen((v) => !v)}
         aria-label="Menu"
+        aria-expanded={open}
       >
         <span />
         <span />
@@ -33,15 +34,19 @@ export default function Navbar() {
 
       <nav className={`nav-links${open ? ' open' : ''}`}>
         {links.map(({ to, label }) => (
-          <Link
+          <NavLink
             key={to}
             to={to}
-            className={pathname === to ? 'active' : ''}
+            className={({ isActive }) => (isActive ? 'active' : '')}
             onClick={() => setOpen(false)}
           >
             {label}
-          </Link>
+          </NavLink>
         ))}
+
+        <Link to="/contato" className="nav-cta" onClick={() => setOpen(false)}>
+          Vamos conversar
+        </Link>
       </nav>
     </header>
   )
