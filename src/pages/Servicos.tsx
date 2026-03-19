@@ -1,3 +1,5 @@
+import { WHATSAPP_LINK } from '../constants/contacts'
+
 type Servico = {
   icon: string
   titulo: string
@@ -70,11 +72,7 @@ export default function Servicos() {
           Chame no WhatsApp para alinhar objetivos, cronograma e o melhor pacote
           para seu momento artístico.
         </p>
-        <a
-          href="https://wa.me/5521975542783"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
           Falar no WhatsApp
         </a>
       </div>
