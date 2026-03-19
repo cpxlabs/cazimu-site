@@ -92,6 +92,7 @@ html {
 
 body {
   min-height: 100vh;
+  min-height: 100dvh;
   background:
     radial-gradient(circle at 11% 16%, var(--color-glow-primary), transparent 34%),
     radial-gradient(circle at 85% 9%, var(--color-glow-accent), transparent 32%),
@@ -146,6 +147,7 @@ textarea {
 
 .app-shell {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
@@ -297,6 +299,7 @@ textarea {
 .hero {
   position: relative;
   min-height: calc(100vh - 82px);
+  min-height: calc(100dvh - 82px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1185,6 +1188,7 @@ button.danger:hover {
 
   .hero {
     min-height: max(calc(100vh - 82px), 640px);
+    min-height: max(calc(100dvh - 82px), 640px);
   }
 
   .hero-stats {
