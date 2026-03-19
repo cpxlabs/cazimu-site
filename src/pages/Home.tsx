@@ -66,6 +66,14 @@ export default function Home() {
         <Link to="/portfolio" className="hero-cta hero-cta-secondary">
           Ver portfólio
         </Link>
+        <a
+          href="https://wa.me/5521975542783"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hero-cta hero-cta-whatsapp"
+        >
+          Falar no WhatsApp
+        </a>
       </motion.div>
 
       <motion.div
