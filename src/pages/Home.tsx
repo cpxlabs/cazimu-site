@@ -65,7 +65,7 @@ const reveal = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0 },
 }
-const HERO_IMAGE_INITIAL_ROTATION = -4
+const HERO_IMAGE_INITIAL_ROTATION_DEG = -4
 
 export default function Home() {
   return (
@@ -87,7 +87,7 @@ export default function Home() {
           src={heroImg}
           alt="Cazimu"
           className="hero-img"
-          initial={{ opacity: 0, scale: 0.9, rotate: HERO_IMAGE_INITIAL_ROTATION }}
+          initial={{ opacity: 0, scale: 0.9, rotate: HERO_IMAGE_INITIAL_ROTATION_DEG }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 0.9 }}
         />

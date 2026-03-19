@@ -30,7 +30,7 @@
   --color-glow-accent: rgba(31, 108, 103, 0.2);
   --color-noise: rgba(255, 255, 255, 0.18);
   --color-line: rgba(177, 77, 47, 0.14);
-  --color-card-border-hover: color-mix(in srgb, var(--color-primary) 54%, var(--color-border) 46%);
+  --color-card-border-hover: #ba7b65;
   --color-focus-ring: rgba(31, 108, 103, 0.2);
   color-scheme: light;
   --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -73,7 +73,7 @@
   --color-glow-accent: rgba(54, 160, 155, 0.1);
   --color-noise: rgba(255, 255, 255, 0.03);
   --color-line: rgba(212, 103, 69, 0.1);
-  --color-card-border-hover: color-mix(in srgb, var(--color-primary) 44%, var(--color-border) 56%);
+  --color-card-border-hover: #9a614d;
   --color-focus-ring: rgba(54, 160, 155, 0.2);
   color-scheme: dark;
 }
@@ -318,6 +318,7 @@ textarea {
 .hero-glow-a {
   width: min(38vw, 540px);
   height: min(38vw, 540px);
+  background: rgba(177, 77, 47, 0.44);
   background: color-mix(in srgb, var(--color-primary) 44%, transparent);
   top: -14%;
   left: -11%;
@@ -326,6 +327,7 @@ textarea {
 .hero-glow-b {
   width: min(34vw, 470px);
   height: min(34vw, 470px);
+  background: rgba(31, 108, 103, 0.42);
   background: color-mix(in srgb, var(--color-accent) 42%, transparent);
   right: -10%;
   bottom: 1%;
