@@ -27,8 +27,6 @@ export function parseObras(value: string | null): Obra[] {
 export default function Portfolio() {
   const [obras] = useState<Obra[]>(() => parseObras(localStorage.getItem('obras')))
 
-  const toEmbed = toEmbedUrl
-
   return (
     <div className="section">
       <div className="section-header">
@@ -55,7 +53,7 @@ export default function Portfolio() {
               <iframe
                 width="100%"
                 height="220"
-                src={toEmbed(obra.link)}
+                src={toEmbedUrl(obra.link)}
                 title={`${obra.titulo} - YouTube player`}
                 allowFullScreen
               />

@@ -1,11 +1,11 @@
-export default function Contato() {
-  type Canal = {
-    titulo: string
-    valor: string
-    link: string
-    icone: string
-  }
+type Canal = {
+  titulo: string
+  valor: string
+  link: string
+  icone: string
+}
 
+export default function Contato() {
   const canais: Canal[] = [
     {
       titulo: 'Instagram',
