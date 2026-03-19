@@ -1,15 +1,31 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Portfolio() {
-  const [obras] = useState(() => JSON.parse(localStorage.getItem('obras')) || [])
-  const toEmbed = (url) => {
-    const value = String(url || '').trim()
-    if (!value) return ''
-    if (value.includes('youtube.com/embed/')) return value
-    if (value.includes('watch?v=')) return value.replace('watch?v=', 'embed/')
-    return value
+type Obra = {
+  id?: number
+  titulo: string
+  link: string
+}
+
+export function parseObras(value: string | null): Obra[] {
+  if (!value) return []
+  try {
+    const parsed = JSON.parse(value) as unknown
+    if (!Array.isArray(parsed)) return []
+    return parsed.filter(
+      (item): item is Obra =>
+        typeof item === 'object' &&
+        item !== null &&
+        typeof (item as Obra).titulo === 'string' &&
+        typeof (item as Obra).link === 'string'
+    )
+  } catch {
+    return []
   }
+}
+
+export default function Portfolio() {
+  const [obras] = useState<Obra[]>(() => parseObras(localStorage.getItem('obras')))
 
   return (
     <div className="section">
@@ -37,7 +53,7 @@ export default function Portfolio() {
               <iframe
                 width="100%"
                 height="220"
-                src={toEmbed(obra.link)}
+                src={toEmbedUrl(obra.link)}
                 title={`${obra.titulo} - YouTube player`}
                 allowFullScreen
               />
@@ -47,4 +63,12 @@ export default function Portfolio() {
       )}
     </div>
   )
+}
+
+export function toEmbedUrl(url: string): string {
+  const value = String(url || '').trim()
+  if (!value) return ''
+  if (value.includes('youtube.com/embed/')) return value
+  if (value.includes('watch?v=')) return value.replace('watch?v=', 'embed/')
+  return value
 }
