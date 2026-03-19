@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
+import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
 type Obra = {
@@ -27,29 +28,78 @@ export function parseObras(value: string | null): Obra[] {
 export default function Portfolio() {
   const [obras] = useState<Obra[]>(() => parseObras(localStorage.getItem('obras')))
 
+  const metricas = useMemo(
+    () => [
+      { label: 'Obras em destaque', valor: String(obras.length || 0) },
+      { label: 'Formatos suportados', valor: 'Singles / EP / Ao vivo' },
+      { label: 'Integração', valor: 'YouTube embed' },
+    ],
+    [obras.length]
+  )
+
   return (
     <div className="section">
-      <div className="section-header">
-        <h2><span className="accent">Portfólio</span></h2>
-        <p>Conheça os trabalhos produzidos e distribuídos pela Cazimu.</p>
-      </div>
+      <motion.div
+        className="section-header"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2>
+          <span className="accent">Portfólio</span>
+        </h2>
+        <p>
+          Conheça trabalhos produzidos e distribuídos pela Cazimu, com foco em
+          estética, consistência e resultado de audiência.
+        </p>
+      </motion.div>
+
+      <motion.div
+        className="portfolio-metrics"
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
+      >
+        {metricas.map((item) => (
+          <article key={item.label} className="metric-card">
+            <span>{item.valor}</span>
+            <p>{item.label}</p>
+          </article>
+        ))}
+      </motion.div>
 
       {obras.length === 0 && (
-        <div className="portfolio-empty">
+        <motion.div
+          className="portfolio-empty"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55 }}
+        >
           <div className="empty-icon">Em breve</div>
           <p>
-            Nenhuma obra cadastrada ainda.{' '}
-            <Link to="/admin">Adicione pelo painel Admin</Link>.
+            Nenhuma obra cadastrada ainda. <Link to="/admin">Adicione pelo painel Admin</Link>.
           </p>
-        </div>
+        </motion.div>
       )}
 
       {obras.length > 0 && (
-        <div className="card-grid cols-2">
+        <motion.div
+          className="card-grid cols-2"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.6 }}
+        >
           {obras.map((obra) => (
-            <div key={obra.id ?? obra.titulo} className="card">
+            <article key={obra.id ?? obra.titulo} className="card card-portfolio">
               <span className="project-badge">Projeto</span>
               <h3>{obra.titulo}</h3>
+              <p>
+                Lançamento acompanhado pela equipe Cazimu com direção de
+                distribuição e posicionamento digital.
+              </p>
               <iframe
                 width="100%"
                 height="220"
@@ -57,9 +107,9 @@ export default function Portfolio() {
                 title={`${obra.titulo} - YouTube player`}
                 allowFullScreen
               />
-            </div>
+            </article>
           ))}
-        </div>
+        </motion.div>
       )}
     </div>
   )

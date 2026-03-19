@@ -24,7 +24,10 @@ export default function Navbar() {
     <header className="nav">
       <Link to="/" className="brand" onClick={() => setOpen(false)}>
         <img src={logo} className="logo" alt="Cazimu" />
-        <span className="brand-wordmark">Cazimu</span>
+        <div>
+          <span className="brand-wordmark">Cazimu</span>
+          <span className="brand-sub">music house</span>
+        </div>
       </Link>
 
       <nav className={`nav-links${open ? ' open' : ''}`}>

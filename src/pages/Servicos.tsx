@@ -1,9 +1,17 @@
+import { motion } from 'framer-motion'
 import { WHATSAPP_LINK } from '../constants/contacts'
 
 type Servico = {
   icon: string
   titulo: string
   descricao: string
+  entregas: string[]
+}
+
+type Pacote = {
+  nome: string
+  perfil: string
+  itens: string[]
 }
 
 const servicos: Servico[] = [
@@ -11,71 +19,157 @@ const servicos: Servico[] = [
     icon: 'Distribuição',
     titulo: 'Distribuição Digital',
     descricao:
-      'Coloque sua música em todas as plataformas digitais como Spotify, Apple Music, Deezer e mais.',
+      'Publicação nas principais plataformas com estrutura de metadados e estratégia de presença contínua.',
+    entregas: ['ISRC e organização técnica', 'Checklist de plataformas', 'Suporte pós-lançamento'],
   },
   {
     icon: 'Produção',
     titulo: 'Produção Musical',
     descricao:
-      'Estúdio completo para gravar, mixar e masterizar suas faixas com qualidade profissional.',
+      'Produção, gravação, mix e master com direção estética para elevar identidade e qualidade sonora.',
+    entregas: ['Direção de arranjo', 'Captação e edição', 'Mixagem e masterização'],
   },
   {
     icon: 'Carreira',
     titulo: 'Gestão de Carreira',
     descricao:
-      'Assessoria completa para artistas independentes, do planejamento à execução.',
+      'Planejamento de ciclos de lançamento, metas e tomada de decisão baseada em indicadores reais.',
+    entregas: ['Plano trimestral', 'Acompanhamento semanal', 'Leitura de dados e ajustes'],
   },
   {
     icon: 'Branding',
     titulo: 'Posicionamento de Marca',
     descricao:
-      'Definição de imagem, linguagem visual e direção de conteúdo para fortalecer presença digital.',
+      'Definição de narrativa, linguagem visual e consistência de comunicação em todos os pontos de contato.',
+    entregas: ['Direção de imagem', 'Narrativa de artista', 'Guia de comunicação'],
   },
   {
     icon: 'Ads',
     titulo: 'Campanhas de Lançamento',
     descricao:
-      'Estratégias de divulgação com foco em alcance qualificado, retenção de audiência e resultados.',
+      'Estratégias de mídia e conteúdo orientadas para descoberta, retenção e crescimento de audiência.',
+    entregas: ['Plano de tráfego', 'Peças e roteiros', 'Relatório de performance'],
   },
   {
-    icon: 'Consultoria',
+    icon: 'Mentoria',
     titulo: 'Mentoria Estratégica',
     descricao:
-      'Encontros de acompanhamento para decisões de repertório, posicionamento e próximos passos.',
+      'Sessões consultivas para repertório, tomada de decisão e próximos passos com clareza e foco.',
+    entregas: ['Diagnóstico do momento atual', 'Mapa de prioridades', 'Roadmap de execução'],
   },
 ]
+
+const pacotes: Pacote[] = [
+  {
+    nome: 'Essencial',
+    perfil: 'Para artistas em início de estruturação',
+    itens: ['Direção de lançamento', 'Distribuição', 'Mentoria mensal'],
+  },
+  {
+    nome: 'Expansão',
+    perfil: 'Para artistas em fase de crescimento ativo',
+    itens: ['Produção + branding', 'Campanha orientada por dados', 'Acompanhamento quinzenal'],
+  },
+  {
+    nome: 'Assinatura',
+    perfil: 'Para projetos com foco em escala e consistência',
+    itens: ['Gestão contínua 360º', 'Squad criativo dedicado', 'Revisões estratégicas recorrentes'],
+  },
+]
+
+const reveal = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+}
 
 export default function Servicos() {
   return (
     <div className="section">
-      <div className="section-header">
-        <h2>Nossos <span className="accent">Serviços</span></h2>
+      <motion.div
+        className="section-header"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.35 }}
+        variants={reveal}
+        transition={{ duration: 0.6 }}
+      >
+        <h2>
+          Nossos <span className="accent">Serviços</span>
+        </h2>
         <p>
           Soluções modulares para impulsionar sua carreira com consistência,
           identidade e visão de mercado.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="card-grid cols-3">
+      <motion.div
+        className="card-grid cols-3"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{ visible: { transition: { staggerChildren: 0.09 } } }}
+      >
         {servicos.map((s) => (
-          <div key={s.titulo} className="card">
+          <motion.article
+            key={s.titulo}
+            className="card"
+            variants={reveal}
+            transition={{ duration: 0.52 }}
+          >
             <div className="card-icon card-pill">{s.icon}</div>
             <h3>{s.titulo}</h3>
             <p>{s.descricao}</p>
-          </div>
+            <ul className="card-list">
+              {s.entregas.map((entrega) => (
+                <li key={entrega}>{entrega}</li>
+              ))}
+            </ul>
+          </motion.article>
         ))}
-      </div>
+      </motion.div>
 
-      <div className="contact-highlight">
+      <motion.div
+        className="service-packages"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+      >
+        {pacotes.map((pacote) => (
+          <motion.article
+            key={pacote.nome}
+            className="card"
+            variants={reveal}
+            transition={{ duration: 0.55 }}
+          >
+            <span className="project-badge">Pacote</span>
+            <h3>{pacote.nome}</h3>
+            <p>{pacote.perfil}</p>
+            <ul className="card-list">
+              {pacote.itens.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </motion.article>
+        ))}
+      </motion.div>
+
+      <motion.div
+        className="contact-highlight"
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
+      >
         <h3>Precisa de um plano sob medida?</h3>
         <p>
-          Chame no WhatsApp para alinhar objetivos, cronograma e o melhor pacote
-          para seu momento artístico.
+          Chame no WhatsApp para alinhar objetivos, orçamento, cronograma e a
+          combinação de serviços ideal para o seu momento artístico.
         </p>
         <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
           Falar no WhatsApp
         </a>
-      </div>
+      </motion.div>
     </div>
   )
 }

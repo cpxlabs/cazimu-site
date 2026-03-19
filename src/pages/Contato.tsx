@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { WHATSAPP_LINK, WHATSAPP_NUMBER } from '../constants/contacts'
 
 type Canal = {
@@ -6,6 +7,29 @@ type Canal = {
   link: string
   icone: string
 }
+
+type Pergunta = {
+  pergunta: string
+  resposta: string
+}
+
+const perguntas: Pergunta[] = [
+  {
+    pergunta: 'Vocês atendem artistas iniciantes?',
+    resposta:
+      'Sim. Montamos planos proporcionais ao estágio da carreira, com priorização clara do que gera maior impacto agora.',
+  },
+  {
+    pergunta: 'Preciso ter músicas prontas?',
+    resposta:
+      'Não necessariamente. Também apoiamos desde a fase de direção criativa e planejamento de repertório.',
+  },
+  {
+    pergunta: 'O atendimento é remoto?',
+    resposta:
+      'Sim. Operamos com atendimento digital para artistas de diferentes regiões com acompanhamento recorrente.',
+  },
+]
 
 export default function Contato() {
   const canais: Canal[] = [
@@ -37,15 +61,29 @@ export default function Contato() {
 
   return (
     <div className="section">
-      <div className="section-header">
-        <h2>Fale <span className="accent">Conosco</span></h2>
+      <motion.div
+        className="section-header"
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.35 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2>
+          Fale <span className="accent">Conosco</span>
+        </h2>
         <p>
           Entre em contato para iniciar sua jornada musical com estratégia,
           clareza e direção criativa.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="contact-grid">
+      <motion.div
+        className="contact-grid"
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6 }}
+      >
         {canais.map((canal) => {
           const temLink = canal.link !== '#'
           const externo = canal.link.startsWith('http')
@@ -79,9 +117,30 @@ export default function Contato() {
             </a>
           )
         })}
-      </div>
+      </motion.div>
 
-      <div className="contact-highlight">
+      <motion.div
+        className="contact-faq"
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6 }}
+      >
+        {perguntas.map((item) => (
+          <article key={item.pergunta} className="card">
+            <h3>{item.pergunta}</h3>
+            <p>{item.resposta}</p>
+          </article>
+        ))}
+      </motion.div>
+
+      <motion.div
+        className="contact-highlight"
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
+      >
         <h3>Quer lançar nos próximos 30 dias?</h3>
         <p>
           Fale com a equipe e receba um plano inicial com próximos passos para
@@ -90,7 +149,7 @@ export default function Contato() {
         <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
           Iniciar conversa no WhatsApp
         </a>
-      </div>
+      </motion.div>
     </div>
   )
 }
