@@ -3,10 +3,15 @@ import { useState } from 'react'
 import logo from '../assets/logo.png'
 import ThemeToggle from './ThemeToggle'
 
+type NavLinkItem = {
+  to: string
+  label: string
+}
+
 export default function Navbar() {
   const [open, setOpen] = useState(false)
 
-  const links = [
+  const links: NavLinkItem[] = [
     { to: '/', label: 'Início' },
     { to: '/bio', label: 'Bio' },
     { to: '/servicos', label: 'Serviços' },

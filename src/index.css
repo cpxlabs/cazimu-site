@@ -397,6 +397,13 @@ img {
   padding: 90px clamp(20px, 4vw, 48px) 70px;
 }
 
+.hero .hero-actions,
+.section-header,
+.bio-content,
+.contact-highlight {
+  max-width: 100%;
+}
+
 .section-header {
   margin-bottom: 36px;
 }
@@ -867,6 +874,60 @@ button.danger:hover {
   text-align: right;
   color: var(--color-text-muted);
   font-size: 0.82rem;
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --max-width: 1240px;
+  }
+
+  .section {
+    padding-inline: clamp(28px, 3.2vw, 56px);
+  }
+
+  .hero {
+    padding-inline: clamp(30px, 4vw, 70px);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .card-grid.cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 801px) {
+  .nav {
+    gap: 14px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    row-gap: 8px;
+    max-width: min(76vw, 840px);
+  }
+
+  .brand-wordmark {
+    font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+  }
+
+  .nav-links a {
+    padding: 8px 12px;
+  }
+
+  .hero {
+    min-height: max(calc(100vh - 78px), 640px);
+  }
+
+  .hero-stats {
+    width: min(920px, 100%);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 900px) {

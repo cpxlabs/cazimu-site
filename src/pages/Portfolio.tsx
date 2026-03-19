@@ -1,9 +1,33 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+type Obra = {
+  id?: number
+  titulo: string
+  link: string
+}
+
+function parseObras(value: string | null): Obra[] {
+  if (!value) return []
+  try {
+    const parsed = JSON.parse(value) as unknown
+    if (!Array.isArray(parsed)) return []
+    return parsed.filter(
+      (item): item is Obra =>
+        typeof item === 'object' &&
+        item !== null &&
+        typeof (item as Obra).titulo === 'string' &&
+        typeof (item as Obra).link === 'string'
+    )
+  } catch {
+    return []
+  }
+}
+
 export default function Portfolio() {
-  const [obras] = useState(() => JSON.parse(localStorage.getItem('obras')) || [])
-  const toEmbed = (url) => {
+  const [obras] = useState<Obra[]>(() => parseObras(localStorage.getItem('obras')))
+
+  const toEmbed = (url: string) => {
     const value = String(url || '').trim()
     if (!value) return ''
     if (value.includes('youtube.com/embed/')) return value

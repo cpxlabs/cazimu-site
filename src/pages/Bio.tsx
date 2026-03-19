@@ -1,4 +1,9 @@
-const pilares = [
+type Pilar = {
+  titulo: string
+  descricao: string
+}
+
+const pilares: Pilar[] = [
   {
     titulo: 'Direção Artística',
     descricao:

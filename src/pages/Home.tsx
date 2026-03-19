@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom'
 import heroImg from '../assets/hero.png'
 
 const MotionImg = motion.img
-const destaque = [
+type DestaqueItem = {
+  valor: string
+  label: string
+}
+
+const destaque: DestaqueItem[] = [
   { valor: '120+', label: 'Lançamentos apoiados' },
   { valor: '18', label: 'Plataformas ativas' },
   { valor: '24/7', label: 'Acompanhamento artístico' },

@@ -1,5 +1,12 @@
 export default function Contato() {
-  const canais = [
+  type Canal = {
+    titulo: string
+    valor: string
+    link: string
+    icone: string
+  }
+
+  const canais: Canal[] = [
     {
       titulo: 'Instagram',
       valor: '@cazimu.editora',

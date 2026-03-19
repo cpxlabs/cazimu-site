@@ -1,4 +1,10 @@
-const servicos = [
+type Servico = {
+  icon: string
+  titulo: string
+  descricao: string
+}
+
+const servicos: Servico[] = [
   {
     icon: 'Distribuição',
     titulo: 'Distribuição Digital',

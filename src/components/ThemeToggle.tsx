@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 
+type ThemeMode = 'light' | 'dark'
+
 function getInitialTheme() {
   const stored = localStorage.getItem('theme')
   if (stored === 'dark' || stored === 'light') return stored
@@ -7,7 +9,7 @@ function getInitialTheme() {
 }
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState(getInitialTheme)
+  const [theme, setTheme] = useState<ThemeMode>(getInitialTheme)
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)

@@ -1,10 +1,39 @@
 import { useState } from 'react'
 
+type Feedback = {
+  type: 'success' | 'error'
+  msg: string
+}
+
+type Obra = {
+  id: number
+  titulo: string
+  link: string
+}
+
+function parseObras(value: string | null): Obra[] {
+  if (!value) return []
+  try {
+    const parsed = JSON.parse(value) as unknown
+    if (!Array.isArray(parsed)) return []
+    return parsed.filter(
+      (item): item is Obra =>
+        typeof item === 'object' &&
+        item !== null &&
+        typeof (item as Obra).id === 'number' &&
+        typeof (item as Obra).titulo === 'string' &&
+        typeof (item as Obra).link === 'string'
+    )
+  } catch {
+    return []
+  }
+}
+
 export default function Admin() {
   const [titulo, setTitulo] = useState('')
   const [link, setLink] = useState('')
-  const [feedback, setFeedback] = useState(null)
-  const [obras, setObras] = useState(() => JSON.parse(localStorage.getItem('obras')) || [])
+  const [feedback, setFeedback] = useState<Feedback | null>(null)
+  const [obras, setObras] = useState<Obra[]>(() => parseObras(localStorage.getItem('obras')))
 
   const salvar = () => {
     if (!titulo.trim() || !link.trim()) {
@@ -20,7 +49,7 @@ export default function Admin() {
     setLink('')
   }
 
-  const remover = (id) => {
+  const remover = (id: number) => {
     const atualizado = obras.filter((obra) => obra.id !== id)
     localStorage.setItem('obras', JSON.stringify(atualizado))
     setObras(atualizado)
