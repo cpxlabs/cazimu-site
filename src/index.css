@@ -1209,6 +1209,14 @@ button.danger:hover {
   }
 }
 
+@media (max-width: 1024px) {
+  .hero {
+    min-height: auto;
+    justify-content: flex-start;
+    padding: 38px 20px 56px;
+  }
+}
+
 @media (max-width: 900px) {
   .footer-inner {
     grid-template-columns: 1fr;
