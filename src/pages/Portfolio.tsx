@@ -7,7 +7,7 @@ type Obra = {
   link: string
 }
 
-function parseObras(value: string | null): Obra[] {
+export function parseObras(value: string | null): Obra[] {
   if (!value) return []
   try {
     const parsed = JSON.parse(value) as unknown
@@ -27,13 +27,7 @@ function parseObras(value: string | null): Obra[] {
 export default function Portfolio() {
   const [obras] = useState<Obra[]>(() => parseObras(localStorage.getItem('obras')))
 
-  const toEmbed = (url: string) => {
-    const value = String(url || '').trim()
-    if (!value) return ''
-    if (value.includes('youtube.com/embed/')) return value
-    if (value.includes('watch?v=')) return value.replace('watch?v=', 'embed/')
-    return value
-  }
+  const toEmbed = toEmbedUrl
 
   return (
     <div className="section">
@@ -71,4 +65,12 @@ export default function Portfolio() {
       )}
     </div>
   )
+}
+
+export function toEmbedUrl(url: string): string {
+  const value = String(url || '').trim()
+  if (!value) return ''
+  if (value.includes('youtube.com/embed/')) return value
+  if (value.includes('watch?v=')) return value.replace('watch?v=', 'embed/')
+  return value
 }
