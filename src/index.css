@@ -518,10 +518,18 @@ textarea {
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
-.card:hover {
+.card:focus-visible {
   transform: translateY(-4px);
   border-color: var(--color-card-border-hover);
   box-shadow: 0 16px 34px color-mix(in srgb, var(--color-shadow) 84%, transparent);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-card-border-hover);
+    box-shadow: 0 16px 34px color-mix(in srgb, var(--color-shadow) 84%, transparent);
+  }
 }
 
 .card-icon {
