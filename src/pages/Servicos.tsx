@@ -1,3 +1,5 @@
+import { WHATSAPP_LINK } from '../constants/contacts'
+
 type Servico = {
   icon: string
   titulo: string
@@ -62,6 +64,17 @@ export default function Servicos() {
             <p>{s.descricao}</p>
           </div>
         ))}
+      </div>
+
+      <div className="contact-highlight">
+        <h3>Precisa de um plano sob medida?</h3>
+        <p>
+          Chame no WhatsApp para alinhar objetivos, cronograma e o melhor pacote
+          para seu momento artístico.
+        </p>
+        <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+          Falar no WhatsApp
+        </a>
       </div>
     </div>
   )

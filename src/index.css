@@ -362,6 +362,15 @@ img {
   box-shadow: none;
 }
 
+.hero-cta.hero-cta-whatsapp {
+  background: var(--color-success);
+}
+
+.hero-cta.hero-cta-whatsapp:hover {
+  background: color-mix(in srgb, var(--color-success) 85%, #000 15%);
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--color-success) 30%, transparent);
+}
+
 .hero-stats {
   width: min(840px, 100%);
   margin-top: 34px;

@@ -1,3 +1,5 @@
+import { WHATSAPP_LINK, WHATSAPP_NUMBER } from '../constants/contacts'
+
 type Canal = {
   titulo: string
   valor: string
@@ -15,8 +17,8 @@ export default function Contato() {
     },
     {
       titulo: 'WhatsApp',
-      valor: '+55 (21) 97554-2783',
-      link: 'https://wa.me/5521975542783',
+      valor: WHATSAPP_NUMBER,
+      link: WHATSAPP_LINK,
       icone: 'Chat',
     },
     {
@@ -85,7 +87,7 @@ export default function Contato() {
           Fale com a equipe e receba um plano inicial com próximos passos para
           produção, distribuição e posicionamento.
         </p>
-        <a href="https://wa.me/5521975542783" target="_blank" rel="noopener noreferrer">
+        <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
           Iniciar conversa no WhatsApp
         </a>
       </div>

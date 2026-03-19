@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import heroImg from '../assets/hero.png'
+import { WHATSAPP_LINK } from '../constants/contacts'
 
 const MotionImg = motion.img
 type DestaqueItem = {
@@ -66,6 +67,14 @@ export default function Home() {
         <Link to="/portfolio" className="hero-cta hero-cta-secondary">
           Ver portfólio
         </Link>
+        <a
+          href={WHATSAPP_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hero-cta hero-cta-whatsapp"
+        >
+          Falar no WhatsApp
+        </a>
       </motion.div>
 
       <motion.div
