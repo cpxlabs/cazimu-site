@@ -22,7 +22,7 @@ export default function Footer() {
 
         <div className="footer-copy">
           <p>© {new Date().getFullYear()} Cazimu.</p>
-          <p>Todos os direitos reservados.</p>
+          <p>Criatividade, estratégia e execução.</p>
         </div>
       </div>
     </footer>

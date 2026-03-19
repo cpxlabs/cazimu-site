@@ -40,6 +40,7 @@ export default function Admin() {
       setFeedback({ type: 'error', msg: 'Preencha o título e o link antes de salvar.' })
       return
     }
+
     const atual = [...obras]
     atual.push({ id: Date.now(), titulo: titulo.trim(), link: link.trim() })
     localStorage.setItem('obras', JSON.stringify(atual))
@@ -59,8 +60,28 @@ export default function Admin() {
   return (
     <div className="section">
       <div className="section-header">
-        <h2>Painel <span className="accent">Admin</span></h2>
-        <p>Adicione novas obras ao portfólio da Cazimu.</p>
+        <h2>
+          Painel <span className="accent">Admin</span>
+        </h2>
+        <p>
+          Cadastre e organize as obras do portfólio. Os dados são salvos no
+          navegador atual via localStorage.
+        </p>
+      </div>
+
+      <div className="admin-guide">
+        <article>
+          <strong>Passo 1</strong>
+          <p>Preencha o título da obra exatamente como deseja exibir no site.</p>
+        </article>
+        <article>
+          <strong>Passo 2</strong>
+          <p>Use link no formato YouTube embed ou URL de watch para conversão automática.</p>
+        </article>
+        <article>
+          <strong>Passo 3</strong>
+          <p>Revise e remova itens quando necessário para manter o portfólio sempre atualizado.</p>
+        </article>
       </div>
 
       <div className="admin-grid">
