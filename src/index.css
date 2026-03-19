@@ -337,7 +337,7 @@ textarea {
   animation-delay: 2.5s;
 }
 
-.hero > * {
+.hero > :not(.hero-glow) {
   position: relative;
   z-index: 1;
 }
