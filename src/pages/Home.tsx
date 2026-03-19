@@ -83,6 +83,14 @@ export default function Home() {
           Editora musical criativa
         </motion.span>
 
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.75 }}
+        >
+          CAZ<span className="accent">I</span>MU
+        </motion.h1>
+
         <motion.img
           src={heroImg}
           alt="Cazimu"
@@ -91,14 +99,6 @@ export default function Home() {
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 0.9 }}
         />
-
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.75 }}
-        >
-          CAZ<span className="accent">I</span>MU
-        </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 12 }}

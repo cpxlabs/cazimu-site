@@ -357,7 +357,7 @@ textarea {
 
 .hero-img {
   width: clamp(126px, 17vw, 176px);
-  margin-bottom: 26px;
+  margin: 6px 0 26px;
   filter: drop-shadow(0 10px 28px color-mix(in srgb, var(--color-primary) 32%, transparent));
 }
 
@@ -1275,7 +1275,7 @@ button.danger:hover {
 
   .hero-img {
     width: clamp(110px, 30vw, 152px);
-    margin-bottom: 18px;
+    margin: 6px 0 18px;
   }
 
   .hero h1 {
