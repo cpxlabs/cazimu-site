@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import PageSeo from '../components/PageSeo'
 import { featuredReleases } from '../content/siteContent'
 
 const reveal = {
@@ -9,6 +11,10 @@ const reveal = {
 export default function Lancamentos() {
   return (
     <div className="section">
+      <PageSeo
+        title="Lançamentos - Cazimu"
+        description="Veja os lançamentos públicos da Cazimu com campanha, plataformas e conexão direta com o roster."
+      />
       <motion.div
         className="section-header"
         initial="hidden"
@@ -40,13 +46,18 @@ export default function Lancamentos() {
             variants={reveal}
             transition={{ duration: 0.55 }}
           >
-            <span className="project-badge">{release.format}</span>
+            <span className="project-badge">
+              {release.format} · {release.year}
+            </span>
             <h3>{release.title}</h3>
             <p>{release.artist}</p>
             <ul className="card-list">
               <li>{release.summary}</li>
               <li>{release.platforms.join(' · ')}</li>
             </ul>
+            <Link to={`/lancamentos/${release.slug}`} className="inline-link">
+              Abrir lançamento
+            </Link>
           </motion.article>
         ))}
       </motion.div>

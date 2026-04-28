@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import PageSeo from '../components/PageSeo'
 import { featuredArtists } from '../content/siteContent'
 
 const reveal = {
@@ -9,6 +11,10 @@ const reveal = {
 export default function Artistas() {
   return (
     <div className="section">
+      <PageSeo
+        title="Artistas - Cazimu"
+        description="Conheça o roster público da Cazimu com contexto de posicionamento, foco de trabalho e próximos movimentos."
+      />
       <motion.div
         className="section-header"
         initial="hidden"
@@ -42,10 +48,14 @@ export default function Artistas() {
           >
             <span className="project-badge">{artist.stage}</span>
             <h3>{artist.name}</h3>
-            <p>{artist.highlight}</p>
+            <p>{artist.summary}</p>
             <ul className="card-list">
               <li>{artist.focus}</li>
+              <li>{artist.highlight}</li>
             </ul>
+            <Link to={`/artistas/${artist.slug}`} className="inline-link">
+              Ver projeto
+            </Link>
           </motion.article>
         ))}
       </motion.div>

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import PageSeo from '../components/PageSeo'
 import { editorialHighlights } from '../content/siteContent'
 
 const reveal = {
@@ -9,6 +10,10 @@ const reveal = {
 export default function Conteudo() {
   return (
     <div className="section">
+      <PageSeo
+        title="Conteúdo - Cazimu"
+        description="Acompanhe a frente editorial da Cazimu com análises, bastidores e notícias para artistas e parceiros."
+      />
       <motion.div
         className="section-header"
         initial="hidden"
@@ -43,6 +48,10 @@ export default function Conteudo() {
             <span className="card-icon">{item.category}</span>
             <h3>{item.title}</h3>
             <p>{item.summary}</p>
+            <ul className="card-list">
+              <li>{item.format}</li>
+              <li>{item.audience}</li>
+            </ul>
           </motion.article>
         ))}
       </motion.div>

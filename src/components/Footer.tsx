@@ -10,7 +10,7 @@ export default function Footer() {
             Caz<span className="accent">i</span>mu
           </div>
           <p className="footer-tagline">
-            Editora musical para artistas independentes em crescimento.
+            Music house com roster, catálogo e frente editorial para artistas independentes.
           </p>
         </div>
 

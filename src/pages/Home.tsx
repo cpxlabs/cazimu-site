@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import heroImg from '../assets/hero.png'
 import { WHATSAPP_LINK } from '../constants/contacts'
+import PageSeo from '../components/PageSeo'
 import {
   editorialHighlights,
   featuredArtists,
@@ -102,6 +103,10 @@ const HERO_IMAGE_INITIAL_ROTATION_DEG = -4
 export default function Home() {
   return (
     <>
+      <PageSeo
+        title="Cazimu - Music House para artistas independentes"
+        description="Conheça a nova arquitetura pública da Cazimu com roster, catálogo de lançamentos, conteúdo editorial e frente de imprensa."
+      />
       <section className="hero">
         <div className="hero-glow hero-glow-a" />
         <div className="hero-glow hero-glow-b" />
@@ -112,7 +117,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Editora musical criativa
+          Music house para artistas independentes
         </motion.span>
 
         <motion.h1
@@ -305,6 +310,9 @@ export default function Home() {
               <ul className="card-list">
                 <li>{artist.focus}</li>
               </ul>
+              <Link to={`/artistas/${artist.slug}`} className="inline-link">
+                Ver artista
+              </Link>
             </motion.article>
           ))}
         </motion.div>
@@ -350,6 +358,9 @@ export default function Home() {
                   <li>{release.summary}</li>
                   <li>{release.platforms.join(' · ')}</li>
                 </ul>
+                <Link to={`/lancamentos/${release.slug}`} className="inline-link">
+                  Ver lançamento
+                </Link>
               </motion.article>
             ))}
           </motion.div>

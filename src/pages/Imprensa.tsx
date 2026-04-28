@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { WHATSAPP_LINK } from '../constants/contacts'
+import PageSeo from '../components/PageSeo'
 import { pressResources } from '../content/siteContent'
 
 const reveal = {
@@ -10,6 +11,10 @@ const reveal = {
 export default function Imprensa() {
   return (
     <div className="section">
+      <PageSeo
+        title="Imprensa - Cazimu"
+        description="Acesse os recursos de imprensa da Cazimu com kits, assets e materiais para parceiros e mídia."
+      />
       <motion.div
         className="section-header"
         initial="hidden"
@@ -43,6 +48,7 @@ export default function Imprensa() {
           >
             <h3>{item.title}</h3>
             <p>{item.description}</p>
+            <span className="inline-link">{item.action}</span>
           </motion.article>
         ))}
       </motion.div>

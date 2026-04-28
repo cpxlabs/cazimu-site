@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { WHATSAPP_LINK } from '../constants/contacts'
+import PageSeo from '../components/PageSeo'
 
 type Servico = {
   icon: string
@@ -85,6 +86,10 @@ const reveal = {
 export default function Servicos() {
   return (
     <div className="section">
+      <PageSeo
+        title="Serviços - Cazimu"
+        description="Entenda como a Cazimu opera os eixos de artistas, lançamentos e conteúdo/imprensa com serviços modulares."
+      />
       <motion.div
         className="section-header"
         initial="hidden"
@@ -98,7 +103,8 @@ export default function Servicos() {
         </h2>
         <p>
           Soluções modulares para impulsionar sua carreira com consistência,
-          identidade e visão de mercado.
+          identidade e visão de mercado, organizadas para sustentar artistas,
+          lançamentos e presença editorial.
         </p>
       </motion.div>
 
@@ -152,6 +158,30 @@ export default function Servicos() {
             </ul>
           </motion.article>
         ))}
+      </motion.div>
+
+      <motion.div
+        className="card-grid cols-3 service-packages"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+      >
+        <motion.article className="card" variants={reveal} transition={{ duration: 0.55 }}>
+          <span className="card-icon">Artistas</span>
+          <h3>Camada de roster</h3>
+          <p>Direção, narrativa e leitura de momento para transformar projetos em propostas claras de mercado.</p>
+        </motion.article>
+        <motion.article className="card" variants={reveal} transition={{ duration: 0.55 }}>
+          <span className="card-icon">Lançamentos</span>
+          <h3>Camada de catálogo</h3>
+          <p>Operação de campanha, distribuição e continuidade para que cada obra reforce o catálogo público.</p>
+        </motion.article>
+        <motion.article className="card" variants={reveal} transition={{ duration: 0.55 }}>
+          <span className="card-icon">Conteúdo</span>
+          <h3>Camada editorial</h3>
+          <p>Notícias, bastidores e imprensa para sustentar relacionamento, prova social e recorrência de atenção.</p>
+        </motion.article>
       </motion.div>
 
       <motion.div
