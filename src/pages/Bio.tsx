@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import PageSeo from '../components/PageSeo'
 
 type Pilar = {
   titulo: string
@@ -74,6 +75,10 @@ const reveal = {
 export default function Bio() {
   return (
     <div className="section">
+      <PageSeo
+        title="Quem Somos - Cazimu"
+        description="Conheça a estrutura da Cazimu e como a operação conecta direção artística, lançamento e inteligência de mercado."
+      />
       <motion.div
         className="section-header"
         initial="hidden"
@@ -83,11 +88,11 @@ export default function Bio() {
         transition={{ duration: 0.6 }}
       >
         <h2>
-          Sobre a <span className="accent">Cazimu</span>
+          Quem <span className="accent">Somos</span>
         </h2>
         <p>
-          Uma editora musical dedicada a construir carreiras autorais com visão
-          criativa, estratégia e execução de alta performance.
+          Uma casa de direção musical e lançamento dedicada a construir
+          carreiras autorais com método, clareza e execução consistente.
         </p>
       </motion.div>
 
@@ -102,7 +107,8 @@ export default function Bio() {
           A Cazimu conecta artistas independentes ao mercado fonográfico por
           meio de uma operação que combina sensibilidade artística e inteligência
           de lançamento. Nosso objetivo é garantir que cada obra chegue ao
-          público certo, com impacto e continuidade de crescimento.
+          público certo, com impacto e continuidade de crescimento por meio dos
+          eixos de artistas, lançamentos e conteúdo/imprensa.
         </motion.p>
 
         <motion.div
