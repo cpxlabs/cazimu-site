@@ -1,11 +1,18 @@
 import { Link, NavLink } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import logo from '../assets/logo.png'
 import ThemeToggle from './ThemeToggle'
 import { publicNavigation } from '../content/siteContent'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [open])
 
   return (
     <header className="nav">
@@ -16,6 +23,14 @@ export default function Navbar() {
           <span className="brand-sub">music house</span>
         </div>
       </Link>
+
+      {open && (
+        <div
+          className="nav-backdrop"
+          onClick={() => setOpen(false)}
+          aria-hidden="true"
+        />
+      )}
 
       <nav className={`nav-links${open ? ' open' : ''}`}>
         {publicNavigation.map(({ to, label }) => (

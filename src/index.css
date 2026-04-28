@@ -274,6 +274,15 @@ textarea {
   transform: translateY(-7px) rotate(-45deg);
 }
 
+.nav-backdrop {
+  position: fixed;
+  inset: 0;
+  top: 82px;
+  background: rgba(0, 0, 0, 0.38);
+  z-index: 105;
+  cursor: pointer;
+}
+
 .theme-toggle {
   display: inline-flex;
   align-items: center;
@@ -1277,6 +1286,14 @@ button.danger:hover {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  .card-grid.cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .card-grid.cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .contact-grid,
   .contact-faq {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1378,8 +1395,14 @@ button.danger:hover {
   .contact-grid,
   .contact-faq,
   .admin-guide,
-  .hero-stats {
+  .hero-stats,
+  .bio-highlights,
+  .bio-timeline {
     grid-template-columns: 1fr;
+  }
+
+  .detail-hero-media-release img {
+    aspect-ratio: 16 / 9;
   }
 
   .contact-icon {
@@ -1393,5 +1416,23 @@ button.danger:hover {
 
   .admin-item button {
     width: 100%;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 800px) {
+  .card-grid.cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-cta {
+    width: 100%;
+    justify-content: center;
   }
 }
