@@ -2,23 +2,10 @@ import { Link, NavLink } from 'react-router-dom'
 import { useState } from 'react'
 import logo from '../assets/logo.png'
 import ThemeToggle from './ThemeToggle'
-
-type NavLinkItem = {
-  to: string
-  label: string
-}
+import { publicNavigation } from '../content/siteContent'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
-
-  const links: NavLinkItem[] = [
-    { to: '/', label: 'Início' },
-    { to: '/bio', label: 'Bio' },
-    { to: '/servicos', label: 'Serviços' },
-    { to: '/portfolio', label: 'Portfólio' },
-    { to: '/contato', label: 'Contato' },
-    { to: '/admin', label: 'Admin' },
-  ]
 
   return (
     <header className="nav">
@@ -31,7 +18,7 @@ export default function Navbar() {
       </Link>
 
       <nav className={`nav-links${open ? ' open' : ''}`}>
-        {links.map(({ to, label }) => (
+        {publicNavigation.map(({ to, label }) => (
           <NavLink
             key={to}
             to={to}

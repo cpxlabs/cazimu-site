@@ -564,6 +564,29 @@ textarea {
   color: var(--color-text-secondary);
 }
 
+.inline-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 14px;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.section-header-tight {
+  margin-top: 28px;
+}
+
+.detail-layout {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-bottom: 28px;
+}
+
+.detail-copy {
+  margin-top: 12px;
+}
+
 .card-list {
   list-style: none;
   display: grid;
@@ -743,6 +766,11 @@ textarea {
   gap: 12px;
   margin-bottom: 18px;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.showcase-grid {
+  display: grid;
+  gap: 18px;
 }
 
 .metric-card {

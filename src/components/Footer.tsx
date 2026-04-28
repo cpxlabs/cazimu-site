@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { publicNavigation } from '../content/siteContent'
 
 export default function Footer() {
   return (
@@ -9,15 +10,16 @@ export default function Footer() {
             Caz<span className="accent">i</span>mu
           </div>
           <p className="footer-tagline">
-            Editora musical para artistas independentes em crescimento.
+            Music house com roster, catálogo e frente editorial para artistas independentes.
           </p>
         </div>
 
         <div className="footer-links" aria-label="Links rápidos">
-          <Link to="/bio">Bio</Link>
-          <Link to="/servicos">Serviços</Link>
-          <Link to="/portfolio">Portfólio</Link>
-          <Link to="/contato">Contato</Link>
+          {publicNavigation.slice(1).map((item) => (
+            <Link key={item.to} to={item.to}>
+              {item.label}
+            </Link>
+          ))}
         </div>
 
         <div className="footer-copy">

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { WHATSAPP_LINK, WHATSAPP_NUMBER } from '../constants/contacts'
+import PageSeo from '../components/PageSeo'
 
 type Canal = {
   titulo: string
@@ -61,6 +62,10 @@ export default function Contato() {
 
   return (
     <div className="section">
+      <PageSeo
+        title="Contato - Cazimu"
+        description="Entre em contato com a Cazimu para discutir artistas, lançamentos, catálogo e frente editorial."
+      />
       <motion.div
         className="section-header"
         initial={{ opacity: 0, y: 18 }}
@@ -73,7 +78,7 @@ export default function Contato() {
         </h2>
         <p>
           Entre em contato para iniciar sua jornada musical com estratégia,
-          clareza e direção criativa.
+          clareza, direção criativa e uma arquitetura pensada para crescimento.
         </p>
       </motion.div>
 

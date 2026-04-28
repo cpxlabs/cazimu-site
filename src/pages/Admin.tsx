@@ -64,8 +64,8 @@ export default function Admin() {
           Painel <span className="accent">Admin</span>
         </h2>
         <p>
-          Cadastre e organize as obras do portfólio. Os dados são salvos no
-          navegador atual via localStorage.
+          Ferramenta interna de prototipação. A experiência pública do catálogo
+          não depende mais deste painel nem de dados salvos em localStorage.
         </p>
       </div>
 
