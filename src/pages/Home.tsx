@@ -299,7 +299,7 @@ export default function Home() {
         >
           {featuredArtists.map((artist) => (
             <motion.article
-              key={artist.name}
+              key={artist.slug}
               className="card"
               variants={reveal}
               transition={{ duration: 0.55 }}
@@ -346,7 +346,7 @@ export default function Home() {
           >
             {featuredReleases.map((release) => (
               <motion.article
-                key={release.title}
+                key={release.slug}
                 className="card"
                 variants={reveal}
                 transition={{ duration: 0.55 }}

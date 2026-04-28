@@ -41,7 +41,7 @@ export default function Lancamentos() {
       >
         {featuredReleases.map((release) => (
           <motion.article
-            key={release.title}
+            key={release.slug}
             className="card"
             variants={reveal}
             transition={{ duration: 0.55 }}

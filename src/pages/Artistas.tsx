@@ -41,7 +41,7 @@ export default function Artistas() {
       >
         {featuredArtists.map((artist) => (
           <motion.article
-            key={artist.name}
+            key={artist.slug}
             className="card"
             variants={reveal}
             transition={{ duration: 0.55 }}
