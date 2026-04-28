@@ -1,6 +1,8 @@
+import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import PageSeo from '../components/PageSeo'
 import { editorialHighlights } from '../content/siteContent'
+import { shuffleUnique } from '../utils/shuffleUnique'
 
 const reveal = {
   hidden: { opacity: 0, y: 20 },
@@ -8,6 +10,7 @@ const reveal = {
 }
 
 export default function Conteudo() {
+  const highlights = useMemo(() => shuffleUnique(editorialHighlights, (e) => e.title), [editorialHighlights])
   return (
     <div className="section">
       <PageSeo
@@ -38,7 +41,7 @@ export default function Conteudo() {
         viewport={{ once: true, amount: 0.2 }}
         variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
       >
-        {editorialHighlights.map((item) => (
+        {highlights.map((item) => (
           <motion.article
             key={item.title}
             className="card"

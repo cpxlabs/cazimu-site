@@ -1,7 +1,9 @@
+import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import PageSeo from '../components/PageSeo'
 import { featuredArtists } from '../content/siteContent'
+import { shuffleUnique } from '../utils/shuffleUnique'
 
 const reveal = {
   hidden: { opacity: 0, y: 20 },
@@ -9,6 +11,7 @@ const reveal = {
 }
 
 export default function Artistas() {
+  const artists = useMemo(() => shuffleUnique(featuredArtists, (a) => a.slug), [featuredArtists])
   return (
     <div className="section">
       <PageSeo
@@ -39,7 +42,7 @@ export default function Artistas() {
         viewport={{ once: true, amount: 0.2 }}
         variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
       >
-        {featuredArtists.map((artist) => (
+        {artists.map((artist) => (
           <motion.article
             key={artist.slug}
             className="card"

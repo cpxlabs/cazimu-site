@@ -1,11 +1,15 @@
+import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import PageSeo from '../components/PageSeo'
 import { featuredReleases } from '../content/siteContent'
+import { shuffleUnique } from '../utils/shuffleUnique'
 
 export default function Portfolio() {
+  const releases = useMemo(() => shuffleUnique(featuredReleases, (r) => r.slug), [featuredReleases])
+
   const metricas = [
-    { label: 'Lançamentos em destaque', valor: String(featuredReleases.length) },
+    { label: 'Lançamentos em destaque', valor: String(releases.length) },
     { label: 'Formatos suportados', valor: 'Singles / EP / Ao vivo' },
     { label: 'Fonte pública', valor: 'Conteúdo versionado' },
   ]
@@ -54,7 +58,7 @@ export default function Portfolio() {
         viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.6 }}
       >
-        {featuredReleases.map((release) => (
+        {releases.map((release) => (
           <article key={release.slug} className="card card-portfolio">
             <span className="project-badge">
               {release.format} · {release.year}
