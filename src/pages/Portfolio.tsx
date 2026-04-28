@@ -28,13 +28,28 @@ export function parseObras(value: string | null): Obra[] {
 export default function Portfolio() {
   const [obras] = useState<Obra[]>(() => parseObras(localStorage.getItem('obras')))
 
+  const obrasExibidas = useMemo(() => {
+    const seen = new Set<string>()
+    const unique = obras.filter((obra) => {
+      const key = obra.link.trim()
+      if (seen.has(key)) return false
+      seen.add(key)
+      return true
+    })
+    for (let i = unique.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+      ;[unique[i], unique[j]] = [unique[j], unique[i]]
+    }
+    return unique
+  }, [obras])
+
   const metricas = useMemo(
     () => [
-      { label: 'Obras em destaque', valor: String(obras.length || 0) },
+      { label: 'Obras em destaque', valor: String(obrasExibidas.length) },
       { label: 'Formatos suportados', valor: 'Singles / EP / Ao vivo' },
       { label: 'Integração', valor: 'YouTube embed' },
     ],
-    [obras.length]
+    [obrasExibidas.length]
   )
 
   return (
@@ -70,7 +85,7 @@ export default function Portfolio() {
         ))}
       </motion.div>
 
-      {obras.length === 0 && (
+      {obrasExibidas.length === 0 && (
         <motion.div
           className="portfolio-empty"
           initial={{ opacity: 0, y: 16 }}
@@ -84,7 +99,7 @@ export default function Portfolio() {
         </motion.div>
       )}
 
-      {obras.length > 0 && (
+      {obrasExibidas.length > 0 && (
         <motion.div
           className="card-grid cols-2"
           initial={{ opacity: 0, y: 20 }}
@@ -92,7 +107,7 @@ export default function Portfolio() {
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.6 }}
         >
-          {obras.map((obra) => (
+          {obrasExibidas.map((obra) => (
             <article key={obra.id ?? obra.titulo} className="card card-portfolio">
               <span className="project-badge">Projeto</span>
               <h3>{obra.titulo}</h3>
