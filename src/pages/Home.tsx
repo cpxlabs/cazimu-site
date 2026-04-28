@@ -2,6 +2,11 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import heroImg from '../assets/hero.png'
 import { WHATSAPP_LINK } from '../constants/contacts'
+import {
+  editorialHighlights,
+  featuredArtists,
+  featuredReleases,
+} from '../content/siteContent'
 
 type DestaqueItem = {
   valor: string
@@ -17,12 +22,18 @@ type Diferencial = {
   titulo: string
   descricao: string
 }
+type ArchitecturePillar = {
+  titulo: string
+  descricao: string
+  cta: string
+  to: string
+}
 
 const destaque: DestaqueItem[] = [
-  { valor: '120+', label: 'Lançamentos apoiados' },
-  { valor: '18', label: 'Plataformas e frentes ativas' },
-  { valor: '4.8/5', label: 'Satisfação média de projetos' },
-  { valor: '24/7', label: 'Acompanhamento estratégico' },
+  { valor: '3', label: 'Frentes públicas iniciais' },
+  { valor: '1', label: 'Arquitetura editorial central' },
+  { valor: '100%', label: 'Rotas pensadas para escala' },
+  { valor: '360º', label: 'Visão de artista, lançamento e marca' },
 ]
 
 const etapas: Etapa[] = [
@@ -58,6 +69,27 @@ const diferenciais: Diferencial[] = [
     titulo: 'Narrativa que gera conexão',
     descricao:
       'Construímos histórias de artista que fazem o público entender, lembrar e compartilhar o seu trabalho.',
+  },
+]
+
+const pillars: ArchitecturePillar[] = [
+  {
+    titulo: 'Artistas',
+    descricao: 'Uma camada para apresentar roster, posicionamento e momento de cada projeto.',
+    cta: 'Explorar artistas',
+    to: '/artistas',
+  },
+  {
+    titulo: 'Lançamentos',
+    descricao: 'Estrutura para expor discografia, campanhas e links oficiais de escuta.',
+    cta: 'Ver lançamentos',
+    to: '/lancamentos',
+  },
+  {
+    titulo: 'Conteúdo e imprensa',
+    descricao: 'Base editorial para notícias, bastidores, prova social e relacionamento com mídia.',
+    cta: 'Acessar conteúdo',
+    to: '/conteudo',
   },
 ]
 
@@ -106,8 +138,8 @@ export default function Home() {
           transition={{ delay: 0.45, duration: 0.7 }}
         >
           Uma casa criativa para artistas independentes que querem transformar
-          música em carreira sólida, com planejamento, estética e presença de
-          mercado.
+          música em catálogo, presença e crescimento sustentável, com
+          arquitetura pensada para artistas, lançamentos e conteúdo recorrente.
         </motion.p>
 
         <motion.div
@@ -116,12 +148,12 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.7 }}
         >
-          <Link to="/servicos" className="hero-cta">
-            Conheça nossos serviços
-          </Link>
-          <Link to="/portfolio" className="hero-cta hero-cta-secondary">
-            Ver portfólio
-          </Link>
+            <Link to="/servicos" className="hero-cta">
+             Conheça a operação
+            </Link>
+           <Link to="/lancamentos" className="hero-cta hero-cta-secondary">
+             Ver lançamentos
+           </Link>
           <a
             href={WHATSAPP_LINK}
             target="_blank"
@@ -166,7 +198,8 @@ export default function Home() {
           </h2>
           <p>
             Na Cazimu, cada lançamento é tratado como capítulo de uma construção
-            de marca autoral. Você não recebe apenas execução, recebe direção.
+            de marca autoral. A nova arquitetura organiza a operação por
+            artistas, lançamentos e conteúdo contínuo.
           </p>
         </motion.div>
 
@@ -190,6 +223,158 @@ export default function Home() {
             </motion.article>
           ))}
         </motion.div>
+      </section>
+
+      <section className="section">
+        <motion.div
+          className="section-header"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.35 }}
+          variants={reveal}
+          transition={{ duration: 0.6 }}
+        >
+          <h2>
+            Nova <span className="accent">arquitetura</span> do site
+          </h2>
+          <p>
+            A base pública agora começa a refletir o formato de uma music house
+            com descoberta por roster, catálogo e relacionamento editorial.
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="card-grid cols-3"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+        >
+          {pillars.map((pillar) => (
+            <motion.article
+              key={pillar.titulo}
+              className="card"
+              variants={reveal}
+              transition={{ duration: 0.55 }}
+            >
+              <h3>{pillar.titulo}</h3>
+              <p>{pillar.descricao}</p>
+              <Link to={pillar.to} className="inline-link">
+                {pillar.cta}
+              </Link>
+            </motion.article>
+          ))}
+        </motion.div>
+      </section>
+
+      <section className="section">
+        <motion.div
+          className="section-header"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.35 }}
+          variants={reveal}
+          transition={{ duration: 0.6 }}
+        >
+          <h2>
+            Artistas em <span className="accent">destaque</span>
+          </h2>
+          <p>
+            Uma amostra da camada de roster que passa a organizar a leitura do
+            negócio por perfil artístico e momento de carreira.
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="card-grid cols-3"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+        >
+          {featuredArtists.map((artist) => (
+            <motion.article
+              key={artist.name}
+              className="card"
+              variants={reveal}
+              transition={{ duration: 0.55 }}
+            >
+              <span className="project-badge">{artist.stage}</span>
+              <h3>{artist.name}</h3>
+              <p>{artist.highlight}</p>
+              <ul className="card-list">
+                <li>{artist.focus}</li>
+              </ul>
+            </motion.article>
+          ))}
+        </motion.div>
+      </section>
+
+      <section className="section">
+        <motion.div
+          className="section-header"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.35 }}
+          variants={reveal}
+          transition={{ duration: 0.6 }}
+        >
+          <h2>
+            Lançamentos e <span className="accent">conteúdo</span>
+          </h2>
+          <p>
+            A navegação passa a acomodar catálogo e frente editorial desde a
+            home, aproximando o site de uma operação viva e atualizável.
+          </p>
+        </motion.div>
+
+        <div className="showcase-grid">
+          <motion.div
+            className="card-grid cols-3"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+          >
+            {featuredReleases.map((release) => (
+              <motion.article
+                key={release.title}
+                className="card"
+                variants={reveal}
+                transition={{ duration: 0.55 }}
+              >
+                <span className="project-badge">{release.format}</span>
+                <h3>{release.title}</h3>
+                <p>{release.artist}</p>
+                <ul className="card-list">
+                  <li>{release.summary}</li>
+                  <li>{release.platforms.join(' · ')}</li>
+                </ul>
+              </motion.article>
+            ))}
+          </motion.div>
+
+          <motion.div
+            className="card-grid cols-3"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+          >
+            {editorialHighlights.map((item) => (
+              <motion.article
+                key={item.title}
+                className="card"
+                variants={reveal}
+                transition={{ duration: 0.55 }}
+              >
+                <span className="card-icon">{item.category}</span>
+                <h3>{item.title}</h3>
+                <p>{item.summary}</p>
+              </motion.article>
+            ))}
+          </motion.div>
+        </div>
       </section>
 
       <section className="section section-home-diferenciais">

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { publicNavigation } from '../content/siteContent'
 
 export default function Footer() {
   return (
@@ -14,10 +15,11 @@ export default function Footer() {
         </div>
 
         <div className="footer-links" aria-label="Links rápidos">
-          <Link to="/bio">Bio</Link>
-          <Link to="/servicos">Serviços</Link>
-          <Link to="/portfolio">Portfólio</Link>
-          <Link to="/contato">Contato</Link>
+          {publicNavigation.slice(1).map((item) => (
+            <Link key={item.to} to={item.to}>
+              {item.label}
+            </Link>
+          ))}
         </div>
 
         <div className="footer-copy">

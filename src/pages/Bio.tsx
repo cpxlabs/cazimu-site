@@ -83,11 +83,11 @@ export default function Bio() {
         transition={{ duration: 0.6 }}
       >
         <h2>
-          Sobre a <span className="accent">Cazimu</span>
+          Quem <span className="accent">Somos</span>
         </h2>
         <p>
-          Uma editora musical dedicada a construir carreiras autorais com visão
-          criativa, estratégia e execução de alta performance.
+          Uma casa de direção musical e lançamento dedicada a construir
+          carreiras autorais com método, clareza e execução consistente.
         </p>
       </motion.div>
 

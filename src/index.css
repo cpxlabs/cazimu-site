@@ -564,6 +564,14 @@ textarea {
   color: var(--color-text-secondary);
 }
 
+.inline-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 14px;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
 .card-list {
   list-style: none;
   display: grid;
@@ -744,6 +752,11 @@ textarea {
   margin-bottom: 18px;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
+
+.showcase-grid {
+  display: grid;
+  gap: 18px;
+ }
 
 .metric-card {
   border: 1px solid var(--color-border);
