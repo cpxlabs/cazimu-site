@@ -1,0 +1,20 @@
+<svg width="800" height="960" viewBox="0 0 800 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="960" rx="48" fill="#110E0C"/>
+  <rect width="800" height="960" rx="48" fill="url(#bg)" fill-opacity="0.94"/>
+  <circle cx="638" cy="190" r="138" fill="#F1A662" fill-opacity="0.8"/>
+  <rect x="82" y="116" width="192" height="192" rx="34" fill="#22B2A4" fill-opacity="0.24"/>
+  <path d="M140 760C140 564.61 298.61 406 494 406C591.183 406 679.211 445.188 743 508.6V960H140V760Z" fill="#080808" fill-opacity="0.58"/>
+  <circle cx="420" cy="392" r="156" fill="#F3C9A8"/>
+  <path d="M267 405C267 300.287 351.287 216 456 216C515.3 216 568.242 243.204 602.888 285.798C610.126 294.695 616.742 304.086 622.666 313.895C570.056 327.748 527.068 359.466 495.689 408.367C458.986 465.559 444.275 536.435 450.342 604.108C444.892 604.692 439.359 605 433.754 605C341.668 605 267 530.332 267 438.246V405Z" fill="#161412"/>
+  <path d="M324 604H534C621.261 604 692 674.739 692 762V960H166V762C166 674.739 236.739 604 324 604Z" fill="#1F6C67"/>
+  <path d="M306 960L374 690H492L560 960H306Z" fill="#5A2417"/>
+  <text x="72" y="812" fill="#FFF2E5" font-family="Arial, sans-serif" font-size="52" font-weight="700">Coletivo Linha</text>
+  <text x="72" y="870" fill="#D2DBD9" font-family="Arial, sans-serif" font-size="28" letter-spacing="4">RAP / CENA URBANA</text>
+  <defs>
+    <linearGradient id="bg" x1="80" y1="86" x2="708" y2="904" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#211512"/>
+      <stop offset="0.5" stop-color="#46342B"/>
+      <stop offset="1" stop-color="#102120"/>
+    </linearGradient>
+  </defs>
+</svg>

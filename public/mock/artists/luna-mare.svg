@@ -1,0 +1,20 @@
+<svg width="800" height="960" viewBox="0 0 800 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="960" rx="48" fill="#101C24"/>
+  <rect width="800" height="960" rx="48" fill="url(#bg)" fill-opacity="0.92"/>
+  <circle cx="632" cy="176" r="116" fill="#F7C58B" fill-opacity="0.92"/>
+  <circle cx="170" cy="780" r="160" fill="#5DD4C6" fill-opacity="0.22"/>
+  <path d="M156 738C156 569.553 292.553 433 461 433C571.457 433 667.237 491.532 720.4 579.202V960H156V738Z" fill="#0E151B" fill-opacity="0.58"/>
+  <path d="M274 409C274 327.814 339.814 262 421 262C502.186 262 568 327.814 568 409V446C568 527.186 502.186 593 421 593C339.814 593 274 527.186 274 446V409Z" fill="#F5D8B5"/>
+  <path d="M273 405C285 292 352 222 436 222C515 222 581 281 593 378C596.669 407.633 591.662 437.694 578.579 464.55C565.496 491.406 544.892 514.405 519.28 531.067C506.061 471.507 442.401 434 362.021 435.836C326.506 436.647 296.148 445.233 271.555 457.517C269.031 440.259 269.503 422.659 273 405Z" fill="#101C24"/>
+  <path d="M346 595H498C573.663 595 635 656.337 635 732V960H209V732C209 656.337 270.337 595 346 595Z" fill="#D86B55"/>
+  <path d="M285 960L368 644H475L561 960H285Z" fill="#B14D2F"/>
+  <text x="72" y="812" fill="#FCEEDD" font-family="Arial, sans-serif" font-size="54" font-weight="700">Luna Maré</text>
+  <text x="72" y="870" fill="#C6D2D9" font-family="Arial, sans-serif" font-size="28" letter-spacing="4">POP ALTERNATIVO</text>
+  <defs>
+    <linearGradient id="bg" x1="68" y1="70" x2="742" y2="898" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#132D39"/>
+      <stop offset="0.56" stop-color="#254558"/>
+      <stop offset="1" stop-color="#40221A"/>
+    </linearGradient>
+  </defs>
+</svg>

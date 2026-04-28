@@ -49,6 +49,9 @@ export default function Lancamentos() {
             variants={reveal}
             transition={{ duration: 0.55 }}
           >
+            <div className="card-media card-media-square">
+              <img src={release.coverUrl} alt={release.coverAlt} loading="lazy" decoding="async" />
+            </div>
             <span className="project-badge">
               {release.format} · {release.year}
             </span>
