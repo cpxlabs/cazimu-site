@@ -51,6 +51,16 @@ export default function LancamentoDetalhe() {
       </motion.div>
 
       <motion.div
+        className="detail-hero-media detail-hero-media-release"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{ duration: 0.6 }}
+      >
+        <img src={release.coverUrl} alt={release.coverAlt} />
+      </motion.div>
+
+      <motion.div
         className="detail-layout"
         initial="hidden"
         whileInView="visible"

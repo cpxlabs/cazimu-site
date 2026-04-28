@@ -49,6 +49,9 @@ export default function Artistas() {
             variants={reveal}
             transition={{ duration: 0.55 }}
           >
+            <div className="card-media card-media-portrait">
+              <img src={artist.imageUrl} alt={artist.imageAlt} loading="lazy" decoding="async" />
+            </div>
             <span className="project-badge">{artist.stage}</span>
             <h3>{artist.name}</h3>
             <p>{artist.summary}</p>

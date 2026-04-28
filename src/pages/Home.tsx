@@ -304,6 +304,9 @@ export default function Home() {
               variants={reveal}
               transition={{ duration: 0.55 }}
             >
+              <div className="card-media card-media-portrait">
+                <img src={artist.imageUrl} alt={artist.imageAlt} loading="lazy" decoding="async" />
+              </div>
               <span className="project-badge">{artist.stage}</span>
               <h3>{artist.name}</h3>
               <p>{artist.highlight}</p>
@@ -351,6 +354,9 @@ export default function Home() {
                 variants={reveal}
                 transition={{ duration: 0.55 }}
               >
+                <div className="card-media card-media-square">
+                  <img src={release.coverUrl} alt={release.coverAlt} loading="lazy" decoding="async" />
+                </div>
                 <span className="project-badge">{release.format}</span>
                 <h3>{release.title}</h3>
                 <p>{release.artist}</p>

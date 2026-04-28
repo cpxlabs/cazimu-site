@@ -49,6 +49,16 @@ export default function ArtistaDetalhe() {
       </motion.div>
 
       <motion.div
+        className="detail-hero-media"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{ duration: 0.6 }}
+      >
+        <img src={artist.imageUrl} alt={artist.imageAlt} />
+      </motion.div>
+
+      <motion.div
         className="detail-layout"
         initial="hidden"
         whileInView="visible"
@@ -99,6 +109,9 @@ export default function ArtistaDetalhe() {
             variants={reveal}
             transition={{ duration: 0.55 }}
           >
+            <div className="card-media card-media-square">
+              <img src={release.coverUrl} alt={release.coverAlt} loading="lazy" decoding="async" />
+            </div>
             <span className="project-badge">
               {release.format} · {release.year}
             </span>

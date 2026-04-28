@@ -1,0 +1,20 @@
+<svg width="800" height="960" viewBox="0 0 800 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="960" rx="48" fill="#15111D"/>
+  <rect width="800" height="960" rx="48" fill="url(#bg)" fill-opacity="0.94"/>
+  <circle cx="182" cy="182" r="132" fill="#FFB482" fill-opacity="0.8"/>
+  <circle cx="650" cy="748" r="170" fill="#A67BFF" fill-opacity="0.18"/>
+  <path d="M184 744C184 568.38 326.38 426 502 426C591.948 426 673.173 463.343 731 523.348V960H184V744Z" fill="#0B0D15" fill-opacity="0.54"/>
+  <path d="M284 397C284 313.605 351.605 246 435 246C518.395 246 586 313.605 586 397V441C586 524.395 518.395 592 435 592C351.605 592 284 524.395 284 441V397Z" fill="#F4D9CB"/>
+  <path d="M300 438C277.451 369.663 281.808 281.998 367 240C432.432 207.735 500.964 228.721 556.037 278.124C573.191 293.509 587.032 312.232 596.695 333.151C578.027 340.386 559.539 348.697 541.663 358.767C463.491 402.799 398.746 467.721 355 541C328.848 517.739 309.716 487.208 300 438Z" fill="#15111D"/>
+  <path d="M356 596H523C600.32 596 663 658.68 663 736V960H216V736C216 658.68 278.68 596 356 596Z" fill="#5D5FEF"/>
+  <path d="M290 960L356 667H529L590 960H290Z" fill="#2A3163"/>
+  <text x="72" y="812" fill="#FDF0E6" font-family="Arial, sans-serif" font-size="54" font-weight="700">Aurora Norte</text>
+  <text x="72" y="870" fill="#D4D6F6" font-family="Arial, sans-serif" font-size="28" letter-spacing="4">INDIE / MPB</text>
+  <defs>
+    <linearGradient id="bg" x1="90" y1="68" x2="716" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B1B42"/>
+      <stop offset="0.48" stop-color="#3C2F7E"/>
+      <stop offset="1" stop-color="#1A2747"/>
+    </linearGradient>
+  </defs>
+</svg>

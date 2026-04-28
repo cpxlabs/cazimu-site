@@ -2,6 +2,8 @@ export type Artist = {
   slug: string
   name: string
   stage: string
+  imageUrl: string
+  imageAlt: string
   focus: string
   highlight: string
   summary: string
@@ -13,6 +15,8 @@ export type Release = {
   title: string
   artist: string
   artistSlug: string
+  coverUrl: string
+  coverAlt: string
   format: string
   year: string
   summary: string
@@ -63,6 +67,8 @@ export const featuredArtists: Artist[] = [
     slug: 'luna-mare',
     name: 'Luna Maré',
     stage: 'Pop alternativo',
+    imageUrl: '/mock/artists/luna-mare.svg',
+    imageAlt: 'Retrato mock de Luna Maré em tons de azul petróleo e coral.',
     focus: 'Reposicionamento de imagem e calendário de singles',
     highlight: 'Projeto com direção criativa, narrativa visual e acompanhamento de campanha.',
     summary:
@@ -77,6 +83,8 @@ export const featuredArtists: Artist[] = [
     slug: 'aurora-norte',
     name: 'Aurora Norte',
     stage: 'Indie / MPB',
+    imageUrl: '/mock/artists/aurora-norte.svg',
+    imageAlt: 'Retrato mock de Aurora Norte com paleta lilás e iluminação quente.',
     focus: 'Estruturação de base de fãs e presença nas plataformas',
     highlight: 'Trabalho orientado para consistência de lançamentos e comunidade recorrente.',
     summary:
@@ -91,6 +99,8 @@ export const featuredArtists: Artist[] = [
     slug: 'coletivo-linha',
     name: 'Coletivo Linha',
     stage: 'Rap / Cena urbana',
+    imageUrl: '/mock/artists/coletivo-linha.svg',
+    imageAlt: 'Retrato mock do Coletivo Linha com visual urbano em verde escuro e âmbar.',
     focus: 'Distribuição, feats estratégicos e amplificação digital',
     highlight: 'Operação integrada entre conteúdo, lançamento e leitura de performance.',
     summary:
@@ -109,6 +119,8 @@ export const featuredReleases: Release[] = [
     title: 'Mar Aberto',
     artist: 'Luna Maré',
     artistSlug: 'luna-mare',
+    coverUrl: '/mock/releases/mar-aberto.svg',
+    coverAlt: 'Capa mock de Mar Aberto com ondas em azul turquesa.',
     format: 'Single',
     year: '2026',
     summary:
@@ -123,6 +135,8 @@ export const featuredReleases: Release[] = [
     title: 'Cidade Vaga-Lume',
     artist: 'Aurora Norte',
     artistSlug: 'aurora-norte',
+    coverUrl: '/mock/releases/cidade-vaga-lume.svg',
+    coverAlt: 'Capa mock de Cidade Vaga-Lume com luzes noturnas e tons violeta.',
     format: 'EP',
     year: '2026',
     summary:
@@ -137,6 +151,8 @@ export const featuredReleases: Release[] = [
     title: 'Turno da Noite',
     artist: 'Coletivo Linha',
     artistSlug: 'coletivo-linha',
+    coverUrl: '/mock/releases/turno-da-noite.svg',
+    coverAlt: 'Capa mock de Turno da Noite com skyline urbano e blocos gráficos.',
     format: 'Ao vivo',
     year: '2025',
     summary:

@@ -12,6 +12,7 @@ describe('Lancamentos pages', () => {
     )
 
     expect(screen.getByRole('heading', { name: /últimos lançamentos/i })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: /capa mock de mar aberto/i })).toBeInTheDocument()
     expect(screen.getAllByRole('link', { name: /abrir lançamento/i })).toHaveLength(3)
   })
 
@@ -25,6 +26,7 @@ describe('Lancamentos pages', () => {
     )
 
     expect(screen.getByRole('heading', { name: /mar aberto/i })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: /capa mock de mar aberto/i })).toBeInTheDocument()
     expect(screen.getByTitle(/mar aberto - player/i)).toHaveAttribute(
       'src',
       'https://www.youtube.com/embed/abc123'

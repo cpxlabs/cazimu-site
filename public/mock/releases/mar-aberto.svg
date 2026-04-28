@@ -1,0 +1,17 @@
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="1000" rx="56" fill="#112333"/>
+  <rect width="1000" height="1000" rx="56" fill="url(#bg)"/>
+  <circle cx="756" cy="226" r="144" fill="#FFD39A" fill-opacity="0.88"/>
+  <path d="M0 650C122 604 235 582 339 584C498 587 648 654 812 648C890 646 953 630 1000 608V1000H0V650Z" fill="#0B1724" fill-opacity="0.48"/>
+  <path d="M0 714C152 664 276 650 372 656C535 666 666 752 826 756C894 758 952 748 1000 732V1000H0V714Z" fill="#145C6F" fill-opacity="0.84"/>
+  <path d="M0 802C120 774 220 768 300 774C454 786 596 866 774 880C865 887 941 882 1000 872V1000H0V802Z" fill="#2AB6B0" fill-opacity="0.86"/>
+  <text x="88" y="792" fill="#FFF3E5" font-family="Arial, sans-serif" font-size="98" font-weight="700">Mar Aberto</text>
+  <text x="92" y="860" fill="#D5E6EB" font-family="Arial, sans-serif" font-size="34" letter-spacing="8">LUNA MARÉ · SINGLE 2026</text>
+  <defs>
+    <linearGradient id="bg" x1="92" y1="94" x2="846" y2="866" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17384B"/>
+      <stop offset="0.58" stop-color="#23576B"/>
+      <stop offset="1" stop-color="#2F2A47"/>
+    </linearGradient>
+  </defs>
+</svg>

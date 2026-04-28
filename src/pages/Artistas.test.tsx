@@ -13,6 +13,7 @@ describe('Artistas page', () => {
 
     expect(screen.getByRole('heading', { name: /nossos artistas/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /luna maré/i })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: /retrato mock de luna maré/i })).toBeInTheDocument()
     expect(screen.getAllByRole('link', { name: /ver projeto/i })).toHaveLength(3)
   })
 
@@ -26,6 +27,7 @@ describe('Artistas page', () => {
     )
 
     expect(screen.getByRole('heading', { name: /luna maré/i })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: /retrato mock de luna maré/i })).toBeInTheDocument()
     expect(screen.getByText(/direções de trabalho/i)).toBeInTheDocument()
     expect(document.title).toMatch(/luna maré - artistas cazimu/i)
   })
