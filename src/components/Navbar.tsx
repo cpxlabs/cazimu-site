@@ -28,7 +28,10 @@ export default function Navbar() {
         <div
           className="nav-backdrop"
           onClick={() => setOpen(false)}
-          aria-hidden="true"
+          role="button"
+          tabIndex={-1}
+          aria-label="Fechar menu"
+          onKeyDown={(e) => e.key === 'Escape' && setOpen(false)}
         />
       )}
 
