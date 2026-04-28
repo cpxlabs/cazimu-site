@@ -45,6 +45,23 @@ Esses comportamentos ficam centralizados em `src/utils/shuffleUnique.ts`.
 
 A rota `/admin` permanece como ferramenta interna de prototipação e ainda usa `localStorage` para cadastrar obras temporárias. Ela não é a fonte de dados da experiência pública.
 
+## Responsividade
+
+O layout é adaptativo para todos os tamanhos de tela, com os seguintes breakpoints principais:
+
+| Breakpoint | Comportamento |
+|---|---|
+| `≥ 1280px` | Largura máxima expandida para 1240px; padding interno aumentado |
+| `≥ 801px` | Nav horizontal visível; grids de 3 e 2 colunas explícitas; stats do hero em 4 colunas |
+| `561px – 800px` | `card-grid.cols-3` passa para 2 colunas |
+| `≤ 800px` | Menu hambúrguer ativo; drawer lateral com backdrop e scroll lock |
+| `≤ 900px` | Footer empilhado em coluna única |
+| `≤ 1024px` | Hero sem altura mínima fixa |
+| `≤ 560px` | Todos os grids em coluna única; padding da seção reduzido; imagem de release passa para 16/9 |
+| `≤ 400px` | Botões de CTA do hero empilhados em largura total |
+
+**Menu mobile** — ao abrir o drawer, o scroll do `body` é bloqueado e um backdrop semitransparente é renderizado sobre o conteúdo. Clicar no backdrop fecha o menu.
+
 ## Stack
 
 - [React](https://react.dev/)
