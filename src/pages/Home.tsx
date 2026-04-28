@@ -153,12 +153,12 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.7 }}
         >
-            <Link to="/servicos" className="hero-cta">
-             Conheça a operação
-            </Link>
-           <Link to="/lancamentos" className="hero-cta hero-cta-secondary">
-             Ver lançamentos
-           </Link>
+          <Link to="/servicos" className="hero-cta">
+            Conheça a operação
+          </Link>
+          <Link to="/lancamentos" className="hero-cta hero-cta-secondary">
+            Ver lançamentos
+          </Link>
           <a
             href={WHATSAPP_LINK}
             target="_blank"
