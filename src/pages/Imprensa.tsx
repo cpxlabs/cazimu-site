@@ -1,7 +1,9 @@
+import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { WHATSAPP_LINK } from '../constants/contacts'
 import PageSeo from '../components/PageSeo'
 import { pressResources } from '../content/siteContent'
+import { shuffleUnique } from '../utils/shuffleUnique'
 
 const reveal = {
   hidden: { opacity: 0, y: 20 },
@@ -9,6 +11,7 @@ const reveal = {
 }
 
 export default function Imprensa() {
+  const resources = useMemo(() => shuffleUnique(pressResources, (p) => p.title), [pressResources])
   return (
     <div className="section">
       <PageSeo
@@ -39,7 +42,7 @@ export default function Imprensa() {
         viewport={{ once: true, amount: 0.2 }}
         variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
       >
-        {pressResources.map((item) => (
+        {resources.map((item) => (
           <motion.article
             key={item.title}
             className="card"

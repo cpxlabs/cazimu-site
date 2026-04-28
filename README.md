@@ -32,6 +32,15 @@ Os dados públicos do site ficam centralizados em `src/content/siteContent.ts`, 
 
 O catálogo público não depende mais do painel admin nem de `localStorage` para renderização.
 
+## Shuffle e deduplicação
+
+Todas as páginas que exibem listas de conteúdo (`/artistas`, `/lancamentos`, `/catalogo`, `/conteudo`, `/imprensa`) aplicam automaticamente dois comportamentos ao montar:
+
+1. **Deduplicação** — entradas com a mesma chave (`slug` ou `title`) são removidas, mantendo apenas a primeira ocorrência. Isso protege contra duplicatas acidentais em `siteContent.ts`.
+2. **Shuffle** — a ordem de exibição é aleatorizada a cada visita usando o algoritmo Fisher-Yates, garantindo que nenhum item fique preso sempre na primeira ou última posição.
+
+Esses comportamentos ficam centralizados em `src/utils/shuffleUnique.ts`.
+
 ## Painel admin
 
 A rota `/admin` permanece como ferramenta interna de prototipação e ainda usa `localStorage` para cadastrar obras temporárias. Ela não é a fonte de dados da experiência pública.
