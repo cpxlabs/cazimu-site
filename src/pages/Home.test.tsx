@@ -11,7 +11,7 @@ describe('Home page', () => {
     )
 
     expect(screen.getByRole('heading', { name: /cazimu/i })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /conheça a operação/i })).toBeInTheDocument()
+    expect(screen.getByText(/music house para artistas independentes/i)).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /nova arquitetura do site/i })).toBeInTheDocument()
   })
 })
