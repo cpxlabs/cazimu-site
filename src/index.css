@@ -1268,6 +1268,8 @@ button.danger:hover {
 
   .theme-toggle {
     margin-left: auto;
+    width: 44px;
+    height: 44px;
   }
 
   .nav-links {
