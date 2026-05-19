@@ -1,18 +1,12 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import heroImg from '../assets/hero.png'
-import { WHATSAPP_LINK } from '../constants/contacts'
+import heroMock from '../assets/hero-mock.svg'
 import PageSeo from '../components/PageSeo'
 import {
   editorialHighlights,
   featuredArtists,
   featuredReleases,
 } from '../content/siteContent'
-
-type DestaqueItem = {
-  valor: string
-  label: string
-}
 
 type Etapa = {
   titulo: string
@@ -29,13 +23,6 @@ type ArchitecturePillar = {
   cta: string
   to: string
 }
-
-const destaque: DestaqueItem[] = [
-  { valor: '3', label: 'Frentes públicas iniciais' },
-  { valor: '1', label: 'Arquitetura editorial central' },
-  { valor: '100%', label: 'Rotas pensadas para escala' },
-  { valor: '360º', label: 'Visão de artista, lançamento e marca' },
-]
 
 const etapas: Etapa[] = [
   {
@@ -129,8 +116,8 @@ export default function Home() {
         </motion.h1>
 
         <motion.img
-          src={heroImg}
-          alt="Cazimu"
+          src={heroMock}
+          alt="Mock visual da Cazimu inspirado em vinil e ondas sonoras"
           className="hero-img"
           initial={{ opacity: 0, scale: 0.9, rotate: HERO_IMAGE_INITIAL_ROTATION_DEG }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -146,47 +133,6 @@ export default function Home() {
           música em catálogo, presença e crescimento sustentável, com
           arquitetura pensada para artistas, lançamentos e conteúdo recorrente.
         </motion.p>
-
-        <motion.div
-          className="hero-actions"
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.7 }}
-        >
-          <Link to="/servicos" className="hero-cta">
-            Conheça a operação
-          </Link>
-          <Link to="/lancamentos" className="hero-cta hero-cta-secondary">
-            Ver lançamentos
-          </Link>
-          <a
-            href={WHATSAPP_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hero-cta hero-cta-whatsapp"
-          >
-            Falar no WhatsApp
-          </a>
-        </motion.div>
-
-        <motion.div
-          className="hero-stats"
-          initial="hidden"
-          animate="visible"
-          variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
-        >
-          {destaque.map((item) => (
-            <motion.article
-              key={item.label}
-              className="hero-stat-card"
-              variants={reveal}
-              transition={{ duration: 0.55 }}
-            >
-              <span className="value">{item.valor}</span>
-              <span className="label">{item.label}</span>
-            </motion.article>
-          ))}
-        </motion.div>
       </section>
 
       <section className="section section-home-story">

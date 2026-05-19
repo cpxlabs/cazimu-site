@@ -52,7 +52,7 @@ O layout é adaptativo para todos os tamanhos de tela, com os seguintes breakpoi
 | Breakpoint | Comportamento |
 |---|---|
 | `≥ 1280px` | Largura máxima expandida para 1240px; padding interno aumentado |
-| `≥ 801px` | Nav horizontal visível; grids de 3 e 2 colunas explícitas; stats do hero em 4 colunas |
+| `≥ 801px` | Nav horizontal visível com itens mais compactos para equilibrar links, CTA e toggle; grids de 3 e 2 colunas explícitas |
 | `561px – 800px` | `card-grid.cols-3` passa para 2 colunas |
 | `≤ 800px` | Menu hambúrguer ativo; drawer lateral com backdrop e scroll lock |
 | `≤ 900px` | Footer empilhado em coluna única |

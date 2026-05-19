@@ -169,9 +169,9 @@ textarea {
   align-items: center;
   gap: 10px;
   padding: 0 clamp(18px, 4vw, 52px);
-  background: color-mix(in srgb, var(--color-surface) 84%, var(--color-mix-white) 16%);
+  background: color-mix(in srgb, var(--color-surface) 88%, var(--color-mix-white) 12%);
   border-bottom: 1px solid color-mix(in srgb, var(--color-border) 84%, var(--color-primary) 16%);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
 }
 
 .brand {
@@ -288,14 +288,14 @@ textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   min-height: unset;
   padding: 0;
   border-radius: 50%;
   background: var(--color-accent-soft);
   color: var(--color-accent);
-  border: 1px solid var(--color-border);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, var(--color-border) 80%);
   cursor: pointer;
   transition: background var(--transition), color var(--transition), transform var(--transition);
 }
@@ -315,7 +315,7 @@ textarea {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 72px 24px 90px;
+  padding: 76px 24px 94px;
   overflow: hidden;
 }
 
@@ -353,31 +353,31 @@ textarea {
 }
 
 .hero-eyebrow {
-  padding: 6px 14px;
+  padding: 10px 22px;
   border-radius: 999px;
   border: 1px solid var(--color-border);
-  background: var(--color-glass);
-  letter-spacing: 0.1em;
+  background: color-mix(in srgb, var(--color-glass) 82%, transparent);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   font-weight: 700;
   color: var(--color-text-secondary);
-  margin-bottom: 18px;
+  margin-bottom: 24px;
 }
 
 .hero-img {
-  width: clamp(126px, 17vw, 176px);
-  margin: 6px 0 26px;
+  width: clamp(214px, 24vw, 286px);
+  margin: 28px 0 34px;
   filter: drop-shadow(0 10px 28px color-mix(in srgb, var(--color-primary) 32%, transparent));
 }
 
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 9vw, 5.8rem);
-  letter-spacing: 0.15em;
+  font-size: clamp(3.25rem, 10vw, 6rem);
+  letter-spacing: 0.13em;
   text-transform: uppercase;
   line-height: 0.98;
-  margin-bottom: 16px;
+  margin-bottom: 0;
 }
 
 .hero h1 .accent {
@@ -385,17 +385,10 @@ textarea {
 }
 
 .hero p {
-  max-width: 700px;
-  font-size: clamp(1rem, 2.4vw, 1.18rem);
+  max-width: 1080px;
+  font-size: clamp(1.06rem, 2vw, 1.34rem);
   color: var(--color-text-secondary);
-  margin-bottom: 34px;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  justify-content: center;
+  line-height: 1.6;
 }
 
 .hero-cta {
@@ -417,55 +410,6 @@ textarea {
   background: var(--color-primary-hover);
   transform: translateY(-2px);
   box-shadow: 0 10px 28px color-mix(in srgb, var(--color-primary) 28%, transparent);
-}
-
-.hero-cta.hero-cta-secondary {
-  background: var(--color-glass);
-  color: var(--color-text);
-  border-color: var(--color-border);
-}
-
-.hero-cta.hero-cta-secondary:hover {
-  background: var(--color-glass-strong);
-  box-shadow: none;
-}
-
-.hero-cta.hero-cta-whatsapp {
-  background: var(--color-success);
-}
-
-.hero-cta.hero-cta-whatsapp:hover {
-  background: color-mix(in srgb, var(--color-success) 88%, #000 12%);
-  box-shadow: 0 10px 28px color-mix(in srgb, var(--color-success) 30%, transparent);
-}
-
-.hero-stats {
-  width: min(930px, 100%);
-  margin-top: 34px;
-  display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-}
-
-.hero-stat-card {
-  padding: 18px;
-  border-radius: var(--radius-md);
-  background: color-mix(in srgb, var(--color-surface) 88%, var(--color-mix-white) 12%);
-  border: 1px solid var(--color-border);
-  box-shadow: 0 8px 20px var(--color-shadow);
-}
-
-.hero-stat-card .value {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 1.32rem;
-  color: var(--color-accent);
-  margin-bottom: 3px;
-}
-
-.hero-stat-card .label {
-  font-size: 0.83rem;
-  color: var(--color-text-muted);
 }
 
 .section {
@@ -1260,14 +1204,14 @@ button.danger:hover {
 
 @media (min-width: 801px) {
   .nav {
-    gap: 14px;
+    gap: 12px;
   }
 
   .nav-links {
     flex-wrap: wrap;
     justify-content: flex-end;
-    row-gap: 8px;
-    max-width: min(76vw, 840px);
+    gap: 6px;
+    max-width: min(82vw, 980px);
   }
 
   .brand-wordmark {
@@ -1275,16 +1219,18 @@ button.danger:hover {
   }
 
   .nav-links a {
-    padding: 8px 12px;
+    padding: 7px 11px;
+    font-size: 0.82rem;
+  }
+
+  .nav-links .nav-cta {
+    margin-left: 4px;
+    padding-inline: 16px;
   }
 
   .hero {
     min-height: max(calc(100vh - var(--nav-height)), 640px);
     min-height: max(calc(100dvh - var(--nav-height)), 640px);
-  }
-
-  .hero-stats {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .card-grid.cols-3 {
@@ -1304,8 +1250,8 @@ button.danger:hover {
 @media (max-width: 1024px) {
   .hero {
     min-height: auto;
-    justify-content: flex-start;
-    padding: 38px 20px 56px;
+    justify-content: center;
+    padding: 42px 20px 56px;
   }
 }
 
@@ -1328,6 +1274,8 @@ button.danger:hover {
 
   .theme-toggle {
     margin-left: auto;
+    width: 44px;
+    height: 44px;
   }
 
   .nav-links {
@@ -1361,26 +1309,21 @@ button.danger:hover {
 
   .hero {
     min-height: auto;
-    justify-content: flex-start;
+    justify-content: center;
     padding: 38px 20px 56px;
   }
 
   .hero-img {
-    width: clamp(110px, 30vw, 152px);
-    margin: 6px 0 18px;
+    width: clamp(180px, 42vw, 230px);
+    margin: 24px 0 24px;
   }
 
   .hero h1 {
-    font-size: clamp(2.2rem, 13vw, 3.6rem);
-    margin-bottom: 12px;
+    font-size: clamp(2.7rem, 14vw, 4.3rem);
   }
 
   .hero p {
-    margin-bottom: 24px;
-  }
-
-  .hero-stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    font-size: 1rem;
   }
 }
 
@@ -1396,7 +1339,6 @@ button.danger:hover {
   .contact-grid,
   .contact-faq,
   .admin-guide,
-  .hero-stats,
   .bio-highlights,
   .bio-timeline {
     grid-template-columns: 1fr;
@@ -1427,13 +1369,15 @@ button.danger:hover {
 }
 
 @media (max-width: 400px) {
-  .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
+  .nav {
+    padding-inline: 16px;
   }
 
-  .hero-cta {
-    width: 100%;
-    justify-content: center;
+  .hero-eyebrow {
+    padding-inline: 16px;
+  }
+
+  .hero p {
+    font-size: 1rem;
   }
 }
