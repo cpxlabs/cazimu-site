@@ -1211,7 +1211,6 @@ button.danger:hover {
     flex-wrap: wrap;
     justify-content: flex-end;
     gap: 6px;
-    row-gap: 6px;
     max-width: min(82vw, 980px);
   }
 
