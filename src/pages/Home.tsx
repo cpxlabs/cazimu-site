@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import heroImg from '../assets/hero.png'
+import heroMock from '../assets/hero-mock.svg'
 import PageSeo from '../components/PageSeo'
 import {
   editorialHighlights,
@@ -116,8 +116,8 @@ export default function Home() {
         </motion.h1>
 
         <motion.img
-          src={heroImg}
-          alt="Cazimu"
+          src={heroMock}
+          alt="Mock visual abstrato da Cazimu"
           className="hero-img"
           initial={{ opacity: 0, scale: 0.9, rotate: HERO_IMAGE_INITIAL_ROTATION_DEG }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
