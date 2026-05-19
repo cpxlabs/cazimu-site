@@ -1,63 +1,64 @@
 <svg width="440" height="400" viewBox="0 0 440 400" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="topStroke" x1="148" y1="102" x2="292" y2="186" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#EEE8DE" stop-opacity="0.95"/>
-      <stop offset="0.5" stop-color="#B6A3C4" stop-opacity="0.9"/>
-      <stop offset="1" stop-color="#6E6478" stop-opacity="0.78"/>
-    </linearGradient>
-    <linearGradient id="bottomFill" x1="150" y1="214" x2="292" y2="312" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#19151E"/>
-      <stop offset="0.52" stop-color="#261833"/>
-      <stop offset="1" stop-color="#1B1624"/>
-    </linearGradient>
-    <linearGradient id="bottomStroke" x1="147" y1="211" x2="296" y2="313" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#8A38FF"/>
-      <stop offset="1" stop-color="#B86BFF"/>
-    </linearGradient>
-    <linearGradient id="accentGlow" x1="136" y1="254" x2="304" y2="254" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#5D1DFF" stop-opacity="0.12"/>
-      <stop offset="0.5" stop-color="#8A38FF" stop-opacity="0.9"/>
-      <stop offset="1" stop-color="#6E2DFF" stop-opacity="0.12"/>
-    </linearGradient>
-    <radialGradient id="shadowGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(220 282) rotate(90) scale(96 118)">
-      <stop stop-color="#8A38FF" stop-opacity="0.24"/>
-      <stop offset="1" stop-color="#8A38FF" stop-opacity="0"/>
+    <radialGradient id="bgGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(220 220) rotate(90) scale(176 176)">
+      <stop stop-color="#8D3DFF" stop-opacity="0.18"/>
+      <stop offset="0.55" stop-color="#8D3DFF" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#8D3DFF" stop-opacity="0"/>
     </radialGradient>
-    <filter id="blurGlow" x="92" y="204" width="256" height="144" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feGaussianBlur stdDeviation="16"/>
-    </filter>
-    <filter id="softShadow" x="110" y="70" width="220" height="264" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feOffset dy="14"/>
-      <feGaussianBlur stdDeviation="14"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 0.02 0 0 0 0 0.01 0 0 0 0 0.05 0 0 0 0.46 0"/>
+    <radialGradient id="discFill" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(220 218) rotate(90) scale(114)">
+      <stop stop-color="#33294A"/>
+      <stop offset="0.6" stop-color="#17141F"/>
+      <stop offset="1" stop-color="#100D16"/>
+    </radialGradient>
+    <linearGradient id="discStroke" x1="114" y1="112" x2="316" y2="314" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F1E9DC" stop-opacity="0.78"/>
+      <stop offset="0.52" stop-color="#8E79A9" stop-opacity="0.58"/>
+      <stop offset="1" stop-color="#7B54D4" stop-opacity="0.88"/>
+    </linearGradient>
+    <linearGradient id="waveStroke" x1="120" y1="186" x2="320" y2="186" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2EADD" stop-opacity="0.9"/>
+      <stop offset="0.45" stop-color="#E86F45" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#7D39FF" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="barFill" x1="177" y1="246" x2="263" y2="246" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EE7648"/>
+      <stop offset="1" stop-color="#8B3CFF"/>
+    </linearGradient>
+    <filter id="softShadow" x="80" y="74" width="280" height="286" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feOffset dy="18"/>
+      <feGaussianBlur stdDeviation="18"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.02 0 0 0 0 0.01 0 0 0 0 0.05 0 0 0 0.5 0"/>
       <feBlend in2="SourceGraphic" result="shape"/>
     </filter>
-    <pattern id="noise" width="10" height="10" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="0.8" fill="#F3ECFF" fill-opacity="0.15"/>
-      <circle cx="8.5" cy="4.5" r="0.7" fill="#F3ECFF" fill-opacity="0.08"/>
-      <circle cx="5.5" cy="8.5" r="0.6" fill="#F3ECFF" fill-opacity="0.12"/>
-    </pattern>
+    <filter id="waveGlow" x="103" y="141" width="234" height="92" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
   </defs>
 
+  <ellipse cx="220" cy="220" rx="162" ry="162" fill="url(#bgGlow)"/>
+
   <g filter="url(#softShadow)">
-    <path d="M220 84L306 134C316.511 140.11 323 151.352 323 163.51V178.49C323 190.648 316.511 201.89 306 208L220 258L134 208C123.489 201.89 117 190.648 117 178.49V163.51C117 151.352 123.489 140.11 134 134L220 84Z" fill="#252126" fill-opacity="0.72" stroke="url(#topStroke)" stroke-width="2.2"/>
-    <path d="M141 149L220 103L299 149" stroke="#F4EEE3" stroke-opacity="0.16" stroke-width="2"/>
-    <path d="M141 194L220 239L299 194" stroke="#B38BE8" stroke-opacity="0.14" stroke-width="2"/>
-    <path d="M147 139L147 218" stroke="#D2C6E3" stroke-opacity="0.12" stroke-dasharray="4 7"/>
-    <path d="M293 139L293 218" stroke="#D2C6E3" stroke-opacity="0.12" stroke-dasharray="4 7"/>
+    <circle cx="220" cy="218" r="102" fill="url(#discFill)" stroke="url(#discStroke)" stroke-width="2.4"/>
+    <circle cx="220" cy="218" r="74" stroke="#F3ECDD" stroke-opacity="0.11" stroke-width="1.4"/>
+    <circle cx="220" cy="218" r="52" stroke="#F3ECDD" stroke-opacity="0.08" stroke-width="1.2"/>
+    <circle cx="220" cy="218" r="28" fill="#201829" stroke="#F1E8DC" stroke-opacity="0.2" stroke-width="1.6"/>
+    <circle cx="220" cy="218" r="8.5" fill="#F1E8DC"/>
+
+    <g opacity="0.92">
+      <rect x="174" y="234" width="10" height="44" rx="5" fill="url(#barFill)" fill-opacity="0.45"/>
+      <rect x="191" y="220" width="10" height="72" rx="5" fill="url(#barFill)" fill-opacity="0.62"/>
+      <rect x="208" y="204" width="10" height="104" rx="5" fill="url(#barFill)" fill-opacity="0.82"/>
+      <rect x="225" y="220" width="10" height="72" rx="5" fill="url(#barFill)" fill-opacity="0.62"/>
+      <rect x="242" y="234" width="10" height="44" rx="5" fill="url(#barFill)" fill-opacity="0.45"/>
+      <rect x="259" y="246" width="10" height="20" rx="5" fill="url(#barFill)" fill-opacity="0.35"/>
+    </g>
   </g>
 
-  <g filter="url(#blurGlow)">
-    <ellipse cx="220" cy="264" rx="92" ry="36" fill="url(#accentGlow)"/>
+  <g filter="url(#waveGlow)" opacity="0.32">
+    <path d="M120 186C142 186 146 156 169 156C191 156 198 214 220 214C242 214 249 166 271 166C293 166 298 202 320 202" stroke="url(#waveStroke)" stroke-width="10" stroke-linecap="round"/>
   </g>
 
-  <ellipse cx="220" cy="282" rx="110" ry="62" fill="url(#shadowGlow)"/>
-
-  <path d="M220 198L306 248C316.511 254.11 323 265.352 323 277.51V289.49C323 301.648 316.511 312.89 306 319L220 369L134 319C123.489 312.89 117 301.648 117 289.49V277.51C117 265.352 123.489 254.11 134 248L220 198Z" fill="url(#bottomFill)" stroke="url(#bottomStroke)" stroke-width="2.2"/>
-  <path d="M135 253L220 302L305 253" stroke="#A970FF" stroke-opacity="0.82" stroke-width="1.8"/>
-  <path d="M142 315L220 270L298 315" stroke="#D7BDFF" stroke-opacity="0.18" stroke-width="1.8"/>
-  <path d="M148 252L148 325" stroke="#8A38FF" stroke-opacity="0.25" stroke-dasharray="4 6"/>
-  <path d="M292 252L292 325" stroke="#8A38FF" stroke-opacity="0.25" stroke-dasharray="4 6"/>
-  <path d="M125 292C149 303 177 311 220 311C263 311 291 303 315 292V309C315 317 309 323 301 325C279 332 255 336 220 336C185 336 161 332 139 325C131 323 125 317 125 309V292Z" fill="url(#noise)" fill-opacity="0.8"/>
-  <path d="M168 231L220 201L272 231" stroke="#F8E6FF" stroke-opacity="0.2" stroke-width="1.6"/>
+  <path d="M120 186C142 186 146 156 169 156C191 156 198 214 220 214C242 214 249 166 271 166C293 166 298 202 320 202" stroke="url(#waveStroke)" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M143 144C166 125 193 114 220 112C249 110 278 120 302 142" stroke="#F2EADC" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round"/>
+  <path d="M138 290C163 308 189 318 220 320C252 322 282 312 307 292" stroke="#8C41FF" stroke-opacity="0.42" stroke-width="2" stroke-linecap="round"/>
 </svg>

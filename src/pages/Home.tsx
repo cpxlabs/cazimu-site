@@ -117,7 +117,7 @@ export default function Home() {
 
         <motion.img
           src={heroMock}
-          alt="Mock visual abstrato da Cazimu"
+          alt="Mock visual da Cazimu inspirado em vinil e ondas sonoras"
           className="hero-img"
           initial={{ opacity: 0, scale: 0.9, rotate: HERO_IMAGE_INITIAL_ROTATION_DEG }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
